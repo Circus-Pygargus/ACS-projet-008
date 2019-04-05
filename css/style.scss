@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'yesevaOne';
+    src: url('fonts/YesevaOne-Regular.ttf');
+}
+@font-face {
+    font-family: 'gentium';
+    src: url('fonts/gentium-book-basic.bold.ttf')
+}
+@font-face {
+    font-family: 'lato';
+    src:url('lato.regular.ttf');
+}
+@font-face {
+    font-family: 'openSans';
+    src:url('open-sans.regular.ttf');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    // liste à puces
+    list-style-type: none;
+}
+
+body {
+    width: 100vw;
+    
+    header {
+        width: 100vw;
+        // height: calc(750 / 1600 * 100vw);
+        background-image: url('../img/background_header.jpg');
+        background-size: cover;
+
+        #header_content {
+            margin: 0 10%;
+
+            #header_top {
+
+            }
+
+            #header_content {
+                
+            }
+        }
+    }
+}

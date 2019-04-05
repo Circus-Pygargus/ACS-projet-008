@@ -1,0 +1,51 @@
+Fonts :
+    Nécessaires :
+        YesevaOne
+        GentiumBookBasic bold
+        Lato Regular
+        OpenSans 
+        OpenSans Bold
+        OpenSans Italic
+
+    header : 
+        h1 : YesevaOne
+        navbar : GentiumBookBasic bold
+        boutons : Lato Regular
+
+    section About :
+        h2 : YesevaOne
+        texte : Lato Regular
+
+    section Ingrédients :
+        h2 : YesevaOne
+        texte : Lato Regular
+
+    section Menu : On ne fait pas !
+        h2 : YesevaOne
+        h3 : YesevaOne
+        prix : YesevaOne
+        texte : Lato Regular
+
+    section Reviews :
+        h2 : YesevaOne
+        texte : GentiumBookBasic bold
+                et Lato Regular
+        double quote : Georgia Regular
+
+    section Réservation :
+        h2 : YesevaOne
+        texte : Lato Regular
+        titre des <form> : OpenSans bold
+        champs des <form> : OpenSans Italic
+        bouton : OpenSans
+
+    footer :
+        titres : YesevaOne
+        textes: OpenSans    
+                et OpenSans Bold
+        adresse : OpenSans Bold
+****************************************************************************************
+
+TODO :
+
+virer les police bold et italic non utilisées ... !!!
