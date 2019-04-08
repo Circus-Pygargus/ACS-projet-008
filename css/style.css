@@ -1,15 +1,32 @@
+@charset "UTF-8";
+/* ############## Variables ############## */
+/* ############## Breakpoints ############## */
+/* à utiliser avec un :
+        @include desktop {
+            css code;
+        }
+        @include tablet {
+            css code;
+        }
+*/
+/* ############## Fonts ############## */
 @font-face {
   font-family: 'yesevaOne';
-  src: url("fonts/YesevaOne-Regular.ttf"); }
+  src: url("../fonts/YesevaOne-Regular.ttf"); }
 @font-face {
-  font-family: 'gentium';
-  src: url("fonts/gentium-book-basic.bold.ttf"); }
+  font-family: 'gentium book basic';
+  src: url(../fonts/gentium-book-basic.bold.ttf); }
 @font-face {
   font-family: 'lato';
-  src: url("lato.regular.ttf"); }
+  src: url("../fonts/lato.regular.ttf"); }
 @font-face {
   font-family: 'openSans';
-  src: url("open-sans.regular.ttf"); }
+  src: url("../fonts/open-sans.regular.ttf"); }
+/* correspondances style polices :
+regular et  italic : 400
+bold : 700
+*/
+/* ############## let's go ############## */
 * {
   margin: 0;
   padding: 0;
@@ -18,11 +35,289 @@
 
 body {
   width: 100vw; }
+  body a {
+    color: white; }
+  body .content-width {
+    width: 1024px; }
+  body .bold {
+    font-weight: 700px; }
   body header {
     width: 100vw;
     background-image: url("../img/background_header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white; }
+    body header #header_top-bg {
+      width: 100vw;
+      background-image: linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0)); }
+      body header #header_top-bg #header_top {
+        width: 1170px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        padding: 0 15px; }
+        body header #header_top-bg #header_top #logo {
+          width: 156px;
+          height: 92px; }
+        body header #header_top-bg #header_top nav {
+          display: flex;
+          align-items: center; }
+          body header #header_top-bg #header_top nav ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; }
+          body header #header_top-bg #header_top nav #nav_menu {
+            font-family: 'gentium book basic', sans-serif;
+            font-weight: 700;
+            font-size: 21px; }
+            body header #header_top-bg #header_top nav #nav_menu ul li a {
+              padding: 20px 34px; }
+            body header #header_top-bg #header_top nav #nav_menu ul li a:hover {
+              border-top: 3px solid white; }
+          body header #header_top-bg #header_top nav #nav_social ul li a {
+            display: inline;
+            color: white; }
+            body header #header_top-bg #header_top nav #nav_social ul li a svg {
+              width: 20px;
+              height: 20px;
+              padding-right: 10px; }
+          body header #header_top-bg #header_top nav #nav_social ul li:hover path {
+            fill: #cc9900; }
+    body header #header_bottom {
+      display: flex;
+      flex-direction: column;
+      margin: auto; }
+      body header #header_bottom h1 {
+        margin-top: 100px;
+        font-family: 'yesevaOne';
+        text-align: center;
+        font-size: 96px;
+        text-shadow: 2px 2px black; }
+      body header #header_bottom svg {
+        width: 250px;
+        margin: 50px auto; }
+      body header #header_bottom #btn_header {
+        margin: auto; }
+        body header #header_bottom #btn_header .btn-header {
+          display: inline-block;
+          font-family: 'lato';
+          font-size: 20px;
+          line-height: 20px;
+          padding: 15px 40px;
+          margin: auto;
+          margin-bottom: 100px; }
+        body header #header_bottom #btn_header .btn-header:hover {
+          border: 2px solid #cc9900;
+          color: #cc9900; }
+        body header #header_bottom #btn_header #book_table {
+          margin-right: 15px;
+          background-color: rgba(0, 0, 0, 0.5);
+          border: 1px solid black; }
+        body header #header_bottom #btn_header #see_menu {
+          margin-left: 15px;
+          background-color: rgba(255, 255, 255, 0.3);
+          border: 1px solid white; }
+  body main #section_about {
+    width: 100vw;
+    background-image: url(../img/pattern_rond.jpg);
+    background-repeat: no-repeat;
     background-size: cover; }
-    body header #header_content {
-      margin: 0 10%; }
+    body main #section_about div.content-width {
+      /* prend sa taille avec .content-width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto; }
+      body main #section_about div.content-width img {
+        width: 512px;
+        height: 515px; }
+      body main #section_about div.content-width #chief_words {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 100px 15px; }
+        body main #section_about div.content-width #chief_words h2 {
+          text-align: center;
+          font-family: 'yesevaOne';
+          font-size: 36px;
+          color: #cc9900; }
+        body main #section_about div.content-width #chief_words svg {
+          width: 255px; }
+        body main #section_about div.content-width #chief_words p {
+          font-family: 'lato';
+          text-align: center;
+          font-size: 17px;
+          line-height: 1.7;
+          color: #5d5d5d; }
+        body main #section_about div.content-width #chief_words img:last-child {
+          width: 219px;
+          height: 221px;
+          margin: 50px 0 0 40px; }
+  body main #section_ingredients {
+    width: 100vw;
+    background-image: url("../img/background_ingredients.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; }
+    body main #section_ingredients div.content-width {
+      display: flex;
+      justify-content: flex-end;
+      margin: auto; }
+      body main #section_ingredients div.content-width #fine_ingredients {
+        width: 45.5%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.5);
+        margin: 100px 0;
+        padding: 50px; }
+        body main #section_ingredients div.content-width #fine_ingredients h2 {
+          text-align: center;
+          font-family: 'yesevaOne';
+          font-size: 36px;
+          color: #cc9900; }
+        body main #section_ingredients div.content-width #fine_ingredients svg {
+          width: 255px;
+          margin: auto; }
+        body main #section_ingredients div.content-width #fine_ingredients p {
+          font-family: 'lato';
+          text-align: center;
+          font-size: 17px;
+          line-height: 1.7;
+          color: #ffffff; }
+        body main #section_ingredients div.content-width #fine_ingredients #miniatures_ingredients {
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          margin: auto;
+          margin-top: 50px; }
+  body main #section_reviews {
+    width: 100vw;
+    background-image: url("../img/background_reviews.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center; }
+    body main #section_reviews div {
+      width: 450px;
+      display: flex;
+      flex-direction: column;
+      background-image: url("../img/background_reviews_texts.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 100px 0;
+      padding: 50px 50px; }
+      body main #section_reviews div h2 {
+        text-align: center;
+        font-family: 'yesevaOne';
+        font-size: 36px;
+        color: #ffffff; }
+      body main #section_reviews div svg {
+        width: 255px;
+        margin: auto; }
+      body main #section_reviews div p {
+        font-family: 'lato';
+        text-align: center;
+        font-size: 17px;
+        line-height: 1.7;
+        color: #ffffff; }
+        body main #section_reviews div p span {
+          display: block;
+          font-family: 'gentium book basic';
+          text-align: center;
+          font-size: 12px;
+          padding: 30px 0; }
+  body main #section_reservation {
+    width: 100vw;
+    background-image: url("../img/pattern_rond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; }
+    body main #section_reservation div.content-width {
+      display: flex;
+      justify-content: center;
+      margin: auto; }
+      body main #section_reservation div.content-width img {
+        padding: 100px 25px; }
+      body main #section_reservation div.content-width #reserv_ta_table {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 93px 50px; }
+        body main #section_reservation div.content-width #reserv_ta_table h2 {
+          text-align: center;
+          font-family: 'yesevaOne';
+          font-size: 36px;
+          color: #cc9900; }
+        body main #section_reservation div.content-width #reserv_ta_table svg {
+          width: 255px;
+          margin: 0 auto; }
+        body main #section_reservation div.content-width #reserv_ta_table p {
+          font-family: 'lato';
+          text-align: center;
+          font-size: 17px;
+          line-height: 1.7;
+          color: #4c4c4c; }
+        body main #section_reservation div.content-width #reserv_ta_table form {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around; }
+          body main #section_reservation div.content-width #reserv_ta_table form div {
+            display: flex;
+            flex-direction: column;
+            padding-top: 5px; }
+            body main #section_reservation div.content-width #reserv_ta_table form div label {
+              font-family: 'openSans';
+              font-weight: 700;
+              color: #cc9900; }
+            body main #section_reservation div.content-width #reserv_ta_table form div input {
+              width: 150px;
+              padding: 10px 0 10px 13px;
+              font-family: 'openSans';
+              font-style: italic; }
+            body main #section_reservation div.content-width #reserv_ta_table form div input:hover {
+              border: 1px solid #cc9900; }
+          body main #section_reservation div.content-width #reserv_ta_table form #form_date input {
+            width: 164px;
+            padding: 7.5px 0; }
+          body main #section_reservation div.content-width #reserv_ta_table form div:last-of-type {
+            padding-bottom: 10px; }
+          body main #section_reservation div.content-width #reserv_ta_table form #btn_book_now {
+            width: 200px;
+            height: 35px;
+            font-family: 'openSans';
+            background-color: #cc9900;
+            border: none;
+            color: white; }
+          body main #section_reservation div.content-width #reserv_ta_table form #btn_book_now:hover {
+            border: 1px solid grey; }
+  body footer {
+    width: 100vw;
+    background-color: #191919; }
+    body footer div.content-width {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+      padding: 50px 40px; }
+      body footer div.content-width div.vertical-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 225px; }
+        body footer div.content-width div.vertical-flex h2 {
+          font-family: 'yesevaOne';
+          font-size: 21px;
+          color: white; }
+        body footer div.content-width div.vertical-flex svg {
+          width: 200px; }
+        body footer div.content-width div.vertical-flex p {
+          text-align: center;
+          font-family: 'openSans';
+          font-size: 16px;
+          color: white; }
+      body footer div.content-width div.vertical-flex:first-child {
+        width: 365px; }
 
 /*# sourceMappingURL=style.css.map */

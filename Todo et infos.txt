@@ -48,4 +48,10 @@ Fonts :
 
 TODO :
 
-virer les police bold et italic non utilisées ... !!!
+ _ faire un signe Lambda en favicon
+
+
+
+
+*************************************
+Marche pas :

@@ -1,21 +1,68 @@
+/* ############## Variables ############## */
+/* ############## Breakpoints ############## */
+@mixin desktop {
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 768) and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin landscapephone {
+    @media screen and (min-width: 576px) and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 575px) {
+        @content;
+    }
+}
+
+/* à utiliser avec un :
+        @include desktop {
+            css code;
+        }
+        @include tablet {
+            css code;
+        }
+*/
+
+
+
+/* ############## Fonts ############## */
 @font-face {
     font-family: 'yesevaOne';
-    src: url('fonts/YesevaOne-Regular.ttf');
+    src: url('../fonts/YesevaOne-Regular.ttf');
 }
+
 @font-face {
-    font-family: 'gentium';
-    src: url('fonts/gentium-book-basic.bold.ttf')
+    font-family: 'gentium book basic';
+    src: url(../fonts/gentium-book-basic.bold.ttf);
 }
+
 @font-face {
     font-family: 'lato';
-    src:url('lato.regular.ttf');
+    src: url('../fonts/lato.regular.ttf');
 }
+
 @font-face {
     font-family: 'openSans';
-    src:url('open-sans.regular.ttf');
+    src: url('../fonts/open-sans.regular.ttf');
 }
 
+/* correspondances style polices :
+regular et  italic : 400
+bold : 700
+*/
 
+
+/* ############## let's go ############## */
 * {
     margin: 0;
     padding: 0;
@@ -26,22 +73,446 @@
 
 body {
     width: 100vw;
-    
+
+    a {
+        color: white;
+    }
+
+    .content-width {  
+        width: 1024px;   
+    }
+    .bold {
+        font-weight: 700px;
+    }
+
     header {
         width: 100vw;
-        // height: calc(750 / 1600 * 100vw);
         background-image: url('../img/background_header.jpg');
+        background-repeat: no-repeat;
         background-size: cover;
+        color: white;
 
-        #header_content {
-            margin: 0 10%;
+        #header_top-bg {
+            width: 100vw;
+            background-image: linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0));
 
-            #header_top {
+            #header_top {   
+                width: 1170px;
+                display: flex;
+                justify-content: space-between;
+                margin: auto;
+                padding: 0 15px;
 
+                #logo {
+                //     display: block;
+                //     // cache le texte en l'indentant vers la gauche
+                //     text-indent: -200px;
+                //     // défini la taille du logo
+                    width: 156px;
+                    height: 92px;
+                //     // pose l'image
+                //     background: url('../img/logo.svg');
+                //     // on s'assure que l'image prend bien la taille voulue
+                //     background-size: 156px, 92px;
+                //     // fill: white;
+                }
+
+                nav {
+                    display: flex;
+                    // flex-direction: row;
+                    align-items: center;
+
+                    ul {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
+
+                    #nav_menu {
+                        font-family: 'gentium book basic', sans-serif;
+                        font-weight: 700;
+                        font-size: 21px;
+
+                        ul {
+                            li {
+                                a {
+                                    padding: 20px 34px;
+                                }
+                                a:hover {
+                                    border-top: 3px solid white;
+                                }
+                            }
+                        }
+                    }
+
+                    #nav_social {
+                        ul {
+                            li {
+                                a {
+                                    display: inline;
+                                    color: white;
+
+                                    svg {
+                                        width: 20px;
+                                        height: 20px;
+                                        padding-right: 10px; 
+                                    }
+                                    // svg:hover {
+                                    //     path{
+                                    //     fill: #cc9900;
+                                    //     }
+                                    // }
+                                }
+                            }
+                            
+                            li:hover {
+                                path{
+                                    fill: #cc9900;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #header_bottom {
+            // la taille est donnée par .content-width
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+
+            h1 {
+                margin-top: 100px;
+                font-family: 'yesevaOne';
+                text-align: center;
+                font-size: 96px;
+                text-shadow: 2px 2px black;
             }
 
-            #header_content {
-                
+            svg {
+                width: 250px;
+                margin: 50px auto;
+            }
+
+            #btn_header {
+                margin: auto;
+
+                .btn-header {
+                    display: inline-block;
+                    font-family: 'lato';
+                    font-size: 20px;
+                    line-height: 20px;
+                    padding: 15px 40px;
+                    margin: auto;
+                    margin-bottom: 100px;
+                }
+                .btn-header:hover {
+                    border: 2px solid #cc9900;
+                    color: #cc9900;
+                }
+
+                #book_table {
+                    margin-right: 15px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    border: 1px solid black;
+                }
+
+                #see_menu {
+                    margin-left: 15px;
+                    background-color: rgba(255, 255, 255, 0.3);
+                    border: 1px solid white;
+                }
+            }
+        }
+    }
+
+    main {
+        #section_about {
+            width: 100vw;
+            background-image: url(../img/pattern_rond.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            div.content-width {
+                /* prend sa taille avec .content-width */
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
+
+                img {
+                    width: 512px;
+                    height: 515px;
+                }
+
+                #chief_words {
+                    width: 50%;
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 100px 15px;
+
+                    h2 {
+                        text-align: center;
+                        font-family: 'yesevaOne';
+                        font-size: 36px;
+                        color: #cc9900;
+                    }
+                    svg {
+                        width: 255px;
+                    }
+
+                    p {
+                        font-family: 'lato';
+                        text-align: center;  
+                        font-size: 17px;    
+                        line-height: 1.7;  
+                        color: #5d5d5d;             
+                    }
+
+                    img:last-child {
+                        width: 219px;
+                        height: 221px;
+                        margin: 50px 0 0 40px;
+                    }
+                }
+            }
+        }
+
+        #section_ingredients {
+            width: 100vw;
+            background-image: url('../img/background_ingredients.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            div.content-width {
+                // prend sa taille avec .content-width
+                display: flex;
+                justify-content: flex-end; 
+                margin: auto;
+
+                #fine_ingredients {
+                    width: 45.5%;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: rgba(0, 0, 0, 0.5);   
+                    margin: 100px 0;   
+                    padding: 50px;              
+
+                    h2 {
+                        text-align: center;
+                        font-family: 'yesevaOne';
+                        font-size: 36px;
+                        color: #cc9900;
+                    }
+                    svg {
+                        width: 255px;
+                        margin: auto;
+                    }
+                    p {
+                        font-family: 'lato';
+                        text-align: center;  
+                        font-size: 17px;    
+                        line-height: 1.7;  
+                        color: #ffffff;    
+                    }
+
+                    #miniatures_ingredients {
+                        width: 90%;
+                        display: flex;
+                        justify-content: space-between;
+                        margin: auto;
+                        margin-top: 50px;
+                    }
+                }
+            }
+        }
+
+        #section_reviews {
+            width: 100vw;
+            background-image: url('../img/background_reviews.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+
+            div {
+                width: 450px;
+                display: flex;
+                flex-direction: column;
+                background-image: url('../img/background_reviews_texts.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 100px 0;
+                padding: 50px 50px;
+
+                h2 {
+                    text-align: center;
+                    font-family: 'yesevaOne';
+                    font-size: 36px;
+                    color: #ffffff;
+                }
+
+                svg {
+                    width: 255px;
+                    margin: auto;
+                }
+
+                p {
+                    font-family: 'lato';
+                    text-align: center;  
+                    font-size: 17px;    
+                    line-height: 1.7;  
+                    color: #ffffff;  
+                    
+                    span {
+                        display: block;
+                        font-family: 'gentium book basic';
+                        text-align: center;
+                        font-size: 12px;
+                        padding: 30px 0;
+                    }
+                }
+            }
+        }
+
+        #section_reservation {
+            width: 100vw;
+            background-image: url('../img/pattern_rond.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            div.content-width {
+                // la taille ets donnée par la .content-width
+                display: flex;
+                justify-content: center;
+                margin: auto;
+
+                img {
+                 padding: 100px 25px;
+                }
+
+                #reserv_ta_table {
+                    width: 500px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 93px 50px;
+
+                    h2 {
+                        text-align: center;
+                        font-family: 'yesevaOne';
+                        font-size: 36px;
+                        color: #cc9900;
+                    }
+
+                    svg {
+                        width: 255px;
+                        margin:  0 auto;
+                    }
+
+                    p {
+                        font-family: 'lato';
+                        text-align: center;  
+                        font-size: 17px;    
+                        line-height: 1.7;  
+                        color: #4c4c4c;  
+                    }
+
+                    form {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around; 
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            padding-top: 5px;                            
+
+                            label {
+                                font-family: 'openSans';
+                                font-weight: 700;
+                                color: #cc9900;
+                            }
+
+                            input {
+                                width: 150px;
+                                padding: 10px 0 10px 13px;
+                                font-family: 'openSans';
+                                font-style: italic;
+                            }
+                            input:hover {
+                                border: 1px solid #cc9900;
+                            }
+                        }
+                        #form_date {
+                            input {
+                                width: 164px;
+                                padding: 7.5px 0;
+                            }
+                        }
+                        div:last-of-type {
+                            padding-bottom: 10px;
+                        }
+                        #btn_book_now {                            
+                            width: 200px;
+                            height: 35px;
+                            font-family: 'openSans';
+                            background-color: #cc9900;
+                            border: none;
+                            color: white;
+                        }
+                        
+                        #btn_book_now:hover {   
+                            border: 1px solid grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100vw;
+        background-color: #191919;
+
+        div.content-width {
+            // la taille est donnée dans .content-width
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            padding: 50px 40px;
+
+            div.vertical-flex {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 225px;
+
+                h2 {
+                    // text-align: center;
+                    font-family: 'yesevaOne';
+                    font-size: 21px;
+                    color: white;
+                }
+
+                svg {
+                    width: 200px;
+                }
+
+                p {
+                    text-align: center;
+                    font-family: 'openSans';
+                    font-size: 16px;
+                    color: white;
+                }
+            }
+            div.vertical-flex:first-child {
+                width: 365px;
             }
         }
     }
