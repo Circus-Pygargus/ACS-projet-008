@@ -60,26 +60,35 @@ body {
     width: 1024px; }
     @media screen and (min-width: 992px) and (max-width: 1199px) {
       body .content-width {
-        width: 100vw; } }
+        width: 90%;
+        margin-left: 10%;
+        margin-right: 10%; } }
     @media screen and (min-width: 768px) and (max-width: 991px) {
       body .content-width {
-        width: 100vw; } }
+        width: 90%;
+        margin-left: 10%;
+        margin-right: 10%; } }
     @media screen and (min-width: 576px) and (max-width: 767px) {
       body .content-width {
-        width: 100vw; } }
+        width: 90%;
+        margin-left: 10%;
+        margin-right: 10%; } }
     @media screen and (max-width: 575px) {
       body .content-width {
-        width: 100vw; } }
+        width: 90%;
+        margin-left: 10%;
+        margin-right: 10%; } }
   body .bold {
-    font-weight: 700px; }
+    font-weight: 700; }
   body header {
-    width: 100vw;
+    width: 100%;
     background-image: url("../img/background_header.jpg");
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: white; }
     body header #header_top-bg {
-      width: 100vw;
+      width: 100%;
       background-image: linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0)); }
       body header #header_top-bg #header_top {
         width: 1170px;
@@ -169,33 +178,60 @@ body {
         text-align: center;
         font-size: 96px;
         text-shadow: 2px 2px black; }
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+          body header #header_bottom h1 {
+            font-size: 80px; } }
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+          body header #header_bottom h1 {
+            font-size: 64px; } }
+        @media screen and (min-width: 576px) and (max-width: 767px) {
+          body header #header_bottom h1 {
+            font-size: 48px; } }
+        @media screen and (max-width: 575px) {
+          body header #header_bottom h1 {
+            font-size: 48px; } }
       body header #header_bottom svg {
         width: 250px;
         margin: 50px auto; }
       body header #header_bottom #btn_header {
-        margin: auto; }
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; }
+        @media screen and (max-width: 575px) {
+          body header #header_bottom #btn_header {
+            flex-direction: column; } }
         body header #header_bottom #btn_header .btn-header {
           display: inline-block;
           font-family: 'lato';
           font-size: 20px;
           line-height: 20px;
           padding: 15px 40px;
-          margin: auto;
           margin-bottom: 100px; }
-        body header #header_bottom #btn_header .btn-header:hover {
-          border: 2px solid #cc9900;
-          color: #cc9900; }
         body header #header_bottom #btn_header #book_table {
           margin-right: 15px;
           background-color: rgba(0, 0, 0, 0.5);
           border: 1px solid black; }
+          @media screen and (max-width: 575px) {
+            body header #header_bottom #btn_header #book_table {
+              margin-right: 0; } }
+        body header #header_bottom #btn_header #book_table:hover {
+          border: 1px solid #cc9900;
+          color: #cc9900; }
         body header #header_bottom #btn_header #see_menu {
           margin-left: 15px;
           background-color: rgba(255, 255, 255, 0.3);
           border: 1px solid white; }
+          @media screen and (max-width: 575px) {
+            body header #header_bottom #btn_header #see_menu {
+              margin-left: 0; } }
+        body header #header_bottom #btn_header #see_menu:hover {
+          border: 1px solid #cc9900;
+          color: #cc9900; }
   body main #section_about {
-    width: 100vw;
+    width: 100%;
     background-image: url(../img/pattern_rond.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
     body main #section_about div.content-width {
@@ -204,9 +240,25 @@ body {
       justify-content: center;
       align-items: center;
       margin: auto; }
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        body main #section_about div.content-width {
+          flex-wrap: wrap; } }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        body main #section_about div.content-width {
+          flex-wrap: wrap; } }
+      @media screen and (min-width: 576px) and (max-width: 767px) {
+        body main #section_about div.content-width {
+          flex-wrap: wrap; } }
+      @media screen and (max-width: 575px) {
+        body main #section_about div.content-width {
+          flex-wrap: wrap; } }
       body main #section_about div.content-width img {
         width: 512px;
         height: 515px; }
+        @media screen and (max-width: 575px) {
+          body main #section_about div.content-width img {
+            width: 70vw;
+            height: 70vw; } }
       body main #section_about div.content-width #chief_words {
         width: 50%;
         display: flex;
@@ -232,14 +284,24 @@ body {
           height: 221px;
           margin: 50px 0 0 40px; }
   body main #section_ingredients {
-    width: 100vw;
+    width: 100%;
     background-image: url("../img/background_ingredients.jpg");
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
     body main #section_ingredients div.content-width {
       display: flex;
       justify-content: flex-end;
       margin: auto; }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        body main #section_ingredients div.content-width {
+          justify-content: center; } }
+      @media screen and (min-width: 576px) and (max-width: 767px) {
+        body main #section_ingredients div.content-width {
+          justify-content: center; } }
+      @media screen and (max-width: 575px) {
+        body main #section_ingredients div.content-width {
+          justify-content: center; } }
       body main #section_ingredients div.content-width #fine_ingredients {
         width: 45.5%;
         display: flex;
@@ -267,9 +329,21 @@ body {
           justify-content: space-between;
           margin: auto;
           margin-top: 50px; }
+          @media screen and (max-width: 575px) {
+            body main #section_ingredients div.content-width #fine_ingredients #miniatures_ingredients {
+              margin: 0; } }
+          @media screen and (min-width: 576px) and (max-width: 767px) {
+            body main #section_ingredients div.content-width #fine_ingredients #miniatures_ingredients img {
+              width: 75px;
+              height: 75px; } }
+          @media screen and (max-width: 575px) {
+            body main #section_ingredients div.content-width #fine_ingredients #miniatures_ingredients img {
+              width: 55px;
+              height: 55px; } }
   body main #section_reviews {
-    width: 100vw;
+    width: 100%;
     background-image: url("../img/background_reviews.jpg");
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -283,6 +357,9 @@ body {
       background-size: cover;
       margin: 100px 0;
       padding: 50px 50px; }
+      @media screen and (max-width: 575px) {
+        body main #section_reviews div {
+          width: 80vw; } }
       body main #section_reviews div h2 {
         text-align: center;
         font-family: 'yesevaOne';
@@ -304,16 +381,38 @@ body {
           font-size: 12px;
           padding: 30px 0; }
   body main #section_reservation {
-    width: 100vw;
+    width: 100%;
     background-image: url("../img/pattern_rond.jpg");
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
     body main #section_reservation div.content-width {
       display: flex;
       justify-content: center;
       margin: auto; }
-      body main #section_reservation div.content-width img {
-        padding: 100px 8px; }
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        body main #section_reservation div.content-width {
+          flex-wrap: wrap; } }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        body main #section_reservation div.content-width {
+          flex-wrap: wrap; } }
+      @media screen and (min-width: 576px) and (max-width: 767px) {
+        body main #section_reservation div.content-width {
+          flex-wrap: wrap; } }
+      @media screen and (max-width: 575px) {
+        body main #section_reservation div.content-width {
+          flex-wrap: wrap; } }
+      body main #section_reservation div.content-width #images_assiettes {
+        display: flex;
+        justify-content: center; }
+        body main #section_reservation div.content-width #images_assiettes img {
+          padding: 100px 8px; }
+          @media screen and (min-width: 576px) and (max-width: 767px) {
+            body main #section_reservation div.content-width #images_assiettes img {
+              width: 35%; } }
+          @media screen and (max-width: 575px) {
+            body main #section_reservation div.content-width #images_assiettes img {
+              width: 35%; } }
       body main #section_reservation div.content-width #reserv_ta_table {
         width: 500px;
         display: flex;
@@ -358,30 +457,47 @@ body {
             width: 164px;
             padding: 7.5px 0; }
           body main #section_reservation div.content-width #reserv_ta_table form div:last-of-type {
-            padding-bottom: 10px; }
+            padding-bottom: 30px; }
           body main #section_reservation div.content-width #reserv_ta_table form #btn_book_now {
             width: 200px;
             height: 35px;
             font-family: 'openSans';
+            font-size: 16px;
+            color: white;
             background-color: #cc9900;
-            border: none;
-            color: white; }
+            border: none; }
           body main #section_reservation div.content-width #reserv_ta_table form #btn_book_now:hover {
             border: 1px solid grey; }
   body footer {
-    width: 100vw;
+    width: 100%;
     background-color: #191919; }
     body footer div.content-width {
       display: flex;
       justify-content: space-between;
       margin: auto;
-      padding: 50px 40px; }
+      padding: 50px 0; }
+      @media screen and (min-width: 576px) and (max-width: 767px) {
+        body footer div.content-width {
+          flex-direction: column;
+          align-items: center; } }
+      @media screen and (max-width: 575px) {
+        body footer div.content-width {
+          flex-direction: column;
+          align-items: center; } }
       body footer div.content-width div.vertical-flex {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 225px; }
+        width: 23%; }
+        @media screen and (min-width: 576px) and (max-width: 767px) {
+          body footer div.content-width div.vertical-flex {
+            width: 70%;
+            margin-top: 75px; } }
+        @media screen and (max-width: 575px) {
+          body footer div.content-width div.vertical-flex {
+            width: 70%;
+            margin-top: 75px; } }
         body footer div.content-width div.vertical-flex h2 {
           font-family: 'yesevaOne';
           font-size: 21px;
@@ -393,8 +509,22 @@ body {
           font-family: 'openSans';
           font-size: 16px;
           color: white; }
+        body footer div.content-width div.vertical-flex div.logos a svg {
+          width: 25px;
+          height: 25px;
+          padding-top: 40px;
+          padding-right: 10px;
+          fill: white; }
       body footer div.content-width div.vertical-flex:first-child {
-        width: 365px; }
+        width: 30%; }
+        @media screen and (min-width: 576px) and (max-width: 767px) {
+          body footer div.content-width div.vertical-flex:first-child {
+            width: 70%;
+            margin-top: 0; } }
+        @media screen and (max-width: 575px) {
+          body footer div.content-width div.vertical-flex:first-child {
+            width: 70%;
+            margin-top: 0; } }
       body footer div.content-width div.vertical-flex:last-child p span {
         display: block; }
 

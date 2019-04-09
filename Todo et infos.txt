@@ -49,9 +49,11 @@ Fonts :
 TODO :
 
  _ faire un signe Lambda en favicon
-
+ _ ajouter le " (double quote) en :before sur le p correspondant
 
 
 
 *************************************
 Marche pas :
+
+le height des trois images rondes
