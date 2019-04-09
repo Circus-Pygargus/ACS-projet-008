@@ -7,7 +7,7 @@
 }
 
 @mixin tablet {
-    @media screen and (min-width: 768) and (max-width: 991px) {
+    @media screen and (min-width: 768px) and (max-width: 991px) {
         @content;
     }
 }
@@ -30,6 +30,23 @@
         }
         @include tablet {
             css code;
+        }
+*/
+
+/* je ne vais pas utiliser les mixin pour l'instant :
+        les changements appliqués lors d'un changement de taille de fenêtre 
+        n'apparaissent pas dans l'inspecteur.
+        faut déjà que je comprenne bien tout avant d'utiliser les mixin ...
+
+        Donc pour gagner du temps, à copier coller dès que nécessaire :
+        
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+        }
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+        }
+        @media screen and (min-width: 576px) and (max-width: 767px) {
+        }
+        @media screen and (max-width: 575px) {
         }
 */
 
@@ -77,9 +94,26 @@ body {
     a {
         color: white;
     }
+    // images are now responsive
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 
     .content-width {  
         width: 1024px;   
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+            width: 100vw;
+        }
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            width: 100vw;
+        }
+        @media screen and (min-width: 576px) and (max-width: 767px) {
+            width: 100vw;
+        }
+        @media screen and (max-width: 575px) {
+            width: 100vw;
+        }
     }
     .bold {
         font-weight: 700px;
@@ -103,6 +137,19 @@ body {
                 margin: auto;
                 padding: 0 15px;
 
+                @media screen and (min-width: 992px) and (max-width: 1199px) {
+                    width: 970px;
+                }
+                @media screen and (min-width: 768px) and (max-width: 991px) {
+                    width: 750px;
+                }
+                @media screen and (min-width: 576px) and (max-width: 767px) {
+                    width: 550px;
+                }
+                @media screen and (max-width: 575px) {
+                    width: 100%;
+                }
+
                 #logo {
                 //     display: block;
                 //     // cache le texte en l'indentant vers la gauche
@@ -121,6 +168,14 @@ body {
                     display: flex;
                     // flex-direction: row;
                     align-items: center;
+                    @media screen and (min-width: 576px) and (max-width: 767px) {
+                        width: 50%;
+                        justify-content: space-around;
+                    }
+                    @media screen and (max-width: 575px) {
+                        width: 50%;
+                        justify-content: space-around;
+                    }
 
                     ul {
                         display: flex;
@@ -128,15 +183,44 @@ body {
                         justify-content: space-between;
                     }
 
+                    #burger {
+                        // background-image: url('../img/bouton_menu.png');
+                        display: none;
+                        @media screen and (min-width: 576px) and (max-width: 767px) {
+                            display: inline;
+                            width: 50px;
+                            padding: 7px 7px 8px 7px;
+                        }
+                        @media screen and (max-width: 575px) {
+                            display: inline;
+                            width: 50px;
+                            padding: 7px 7px 8px 7px;
+                        }
+                    }
+                    #burger:hover {
+                        cursor: pointer;
+                        padding: 5px 5px 6px 5px;
+                        border: 2px solid #cc9900;
+                    }
+
                     #nav_menu {
                         font-family: 'gentium book basic', sans-serif;
                         font-weight: 700;
                         font-size: 21px;
+                        @media screen and (min-width: 576px) and (max-width: 767px) {
+                            display: none;
+                        }
+                        @media screen and (max-width: 575px) {
+                            display: none;
+                        }
 
                         ul {
                             li {
                                 a {
                                     padding: 20px 34px;
+                                    @media screen and (min-width: 768px) and (max-width: 991px) {                                       
+                                        padding: 20px 14px;
+                                    }
                                 }
                                 a:hover {
                                     border-top: 3px solid white;
@@ -391,7 +475,7 @@ body {
                 margin: auto;
 
                 img {
-                 padding: 100px 25px;
+                 padding: 100px 8px;
                 }
 
                 #reserv_ta_table {
@@ -513,6 +597,13 @@ body {
             }
             div.vertical-flex:first-child {
                 width: 365px;
+            }
+            div.vertical-flex:last-child {
+                p {
+                    span {
+                        display: block;
+                    }
+                }
             }
         }
     }

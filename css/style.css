@@ -9,6 +9,22 @@
             css code;
         }
 */
+/* je ne vais pas utiliser les mixin pour l'instant :
+        les changements appliqués lors d'un changement de taille de fenêtre 
+        n'apparaissent pas dans l'inspecteur.
+        faut déjà que je comprenne bien tout avant d'utiliser les mixin ...
+
+        Donc pour gagner du temps, à copier coller dès que nécessaire :
+        
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+        }
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+        }
+        @media screen and (min-width: 576px) and (max-width: 767px) {
+        }
+        @media screen and (max-width: 575px) {
+        }
+*/
 /* ############## Fonts ############## */
 @font-face {
   font-family: 'yesevaOne';
@@ -37,8 +53,23 @@ body {
   width: 100vw; }
   body a {
     color: white; }
+  body img {
+    max-width: 100%;
+    height: auto; }
   body .content-width {
     width: 1024px; }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      body .content-width {
+        width: 100vw; } }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      body .content-width {
+        width: 100vw; } }
+    @media screen and (min-width: 576px) and (max-width: 767px) {
+      body .content-width {
+        width: 100vw; } }
+    @media screen and (max-width: 575px) {
+      body .content-width {
+        width: 100vw; } }
   body .bold {
     font-weight: 700px; }
   body header {
@@ -56,22 +87,67 @@ body {
         justify-content: space-between;
         margin: auto;
         padding: 0 15px; }
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+          body header #header_top-bg #header_top {
+            width: 970px; } }
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+          body header #header_top-bg #header_top {
+            width: 750px; } }
+        @media screen and (min-width: 576px) and (max-width: 767px) {
+          body header #header_top-bg #header_top {
+            width: 550px; } }
+        @media screen and (max-width: 575px) {
+          body header #header_top-bg #header_top {
+            width: 100%; } }
         body header #header_top-bg #header_top #logo {
           width: 156px;
           height: 92px; }
         body header #header_top-bg #header_top nav {
           display: flex;
           align-items: center; }
+          @media screen and (min-width: 576px) and (max-width: 767px) {
+            body header #header_top-bg #header_top nav {
+              width: 50%;
+              justify-content: space-around; } }
+          @media screen and (max-width: 575px) {
+            body header #header_top-bg #header_top nav {
+              width: 50%;
+              justify-content: space-around; } }
           body header #header_top-bg #header_top nav ul {
             display: flex;
             flex-direction: row;
             justify-content: space-between; }
+          body header #header_top-bg #header_top nav #burger {
+            display: none; }
+            @media screen and (min-width: 576px) and (max-width: 767px) {
+              body header #header_top-bg #header_top nav #burger {
+                display: inline;
+                width: 50px;
+                padding: 7px 7px 8px 7px; } }
+            @media screen and (max-width: 575px) {
+              body header #header_top-bg #header_top nav #burger {
+                display: inline;
+                width: 50px;
+                padding: 7px 7px 8px 7px; } }
+          body header #header_top-bg #header_top nav #burger:hover {
+            cursor: pointer;
+            padding: 5px 5px 6px 5px;
+            border: 2px solid #cc9900; }
           body header #header_top-bg #header_top nav #nav_menu {
             font-family: 'gentium book basic', sans-serif;
             font-weight: 700;
             font-size: 21px; }
+            @media screen and (min-width: 576px) and (max-width: 767px) {
+              body header #header_top-bg #header_top nav #nav_menu {
+                display: none; } }
+            @media screen and (max-width: 575px) {
+              body header #header_top-bg #header_top nav #nav_menu {
+                display: none; } }
             body header #header_top-bg #header_top nav #nav_menu ul li a {
               padding: 20px 34px; }
+              @media screen and (min-width: 768px) and (max-width: 991px) {
+                body header #header_top-bg #header_top nav #nav_menu ul li a {
+                  padding: 20px 14px; } }
             body header #header_top-bg #header_top nav #nav_menu ul li a:hover {
               border-top: 3px solid white; }
           body header #header_top-bg #header_top nav #nav_social ul li a {
@@ -237,7 +313,7 @@ body {
       justify-content: center;
       margin: auto; }
       body main #section_reservation div.content-width img {
-        padding: 100px 25px; }
+        padding: 100px 8px; }
       body main #section_reservation div.content-width #reserv_ta_table {
         width: 500px;
         display: flex;
@@ -319,5 +395,7 @@ body {
           color: white; }
       body footer div.content-width div.vertical-flex:first-child {
         width: 365px; }
+      body footer div.content-width div.vertical-flex:last-child p span {
+        display: block; }
 
 /*# sourceMappingURL=style.css.map */

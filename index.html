@@ -37,14 +37,17 @@
                 <!-- <img id="logo" src="img/logo.svg" alt="Le logo du restaurant Lambda" width="156px" height="92px"> -->
                 <a href="index.html" id="logo"><img src="img/Logo.png" alt="logo du restaurant Lambda"></a>
                 <nav>
+                    <img id="burger" src="img/burger.png" alt="bouton pour ouvrir le menu">
                     <div id="nav_menu">
                         <ul>
-                            <li><a href="javascript: windows.location.href=windows.location.href">Home</a></li>
+                            <li><a href="index.html">Home</a></li>
                             <li><a href="#section_about">About</a></li>
                             <li><a href="#section_ingredients">Ingredients</a></li>
                             <!-- <li><a href="#section_menu"></a>Menu</li> -->
                             <li><a href="#section_reviews">Reviews</a></li>
-                            <li><a href="#section_reservation">Réservations</a></li>
+                            <!-- lien vers la div contenant la <form> au lieu de vers la section
+                                     pour ne pas arriver sur les images si sur un phone -->
+                            <li><a href="#reserv_ta_table">Réservations</a></li>
 
                         </ul>
                     </div>
@@ -504,10 +507,9 @@
                 <h2>About Us</h2>
                 <!-- ce svg correspond au petit divider 
                             on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
-                    viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
-                    fill="#989898">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" width="628.711px" height="58.111px" viewBox="0 0 628.711 58.111"
+                    enable-background="new 0 0 628.711 58.111" xml:space="preserve" fill="#989898">
                     <g>
                         <g>
                             <defs>
@@ -555,9 +557,9 @@
                     </g>
                 </svg>
                 <p>
-                    Lambda's new and expanded Chelsea location 
-                    represents a truly authentic <span class="bold">Greek</span> patisserie, 
-                    featuring breakfasts of fresh croissants and 
+                    Lambda's new and expanded Chelsea location
+                    represents a truly authentic <span class="bold">Greek</span> patisserie,
+                    featuring breakfasts of fresh croissants and
                     steaming bowls of café.
                     Lamda the best restaurant in town
                 </p>
@@ -566,10 +568,9 @@
                 <h2>Opening Hours</h2>
                 <!-- ce svg correspond au petit divider 
                             on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
-                    viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
-                    fill="#989898">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" width="628.711px" height="58.111px" viewBox="0 0 628.711 58.111"
+                    enable-background="new 0 0 628.711 58.111" xml:space="preserve" fill="#989898">
                     <g>
                         <g>
                             <defs>
@@ -617,7 +618,7 @@
                     </g>
                 </svg>
                 <p>
-                    <span class="bold">Mon-Thu:</span> 7:00am-8:00pm 
+                    <span class="bold">Mon-Thu:</span> 7:00am-8:00pm
                     <span class="bold">Fri-Sun:</span> 7:00am-10:00pm
                 </p>
             </div>
@@ -625,10 +626,9 @@
                 <h2>Our Location</h2>
                 <!-- ce svg correspond au petit divider 
                             on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
-                    viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
-                    fill="#989898">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" width="628.711px" height="58.111px" viewBox="0 0 628.711 58.111"
+                    enable-background="new 0 0 628.711 58.111" xml:space="preserve" fill="#989898">
                     <g>
                         <g>
                             <defs>
@@ -675,9 +675,9 @@
                         </g>
                     </g>
                 </svg>
-                <p classs="bold">
-                    19th Paradise Street Sitia
-                    128 Meserole Avenue
+                <p class="bold">
+                    <span>19th Paradise Street Sitia</span>
+                    <span>128 Meserole Avenue</span>
                 </p>
             </div>
         </div>
