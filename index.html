@@ -32,18 +32,17 @@
 <body>
     <header>
         <!-- <div id="header_content"> -->
-        <div id="header_top-bg">
+        <div id="header_top-bg" class="nav_default-place">
             <div id="header_top">
                 <!-- <img id="logo" src="img/logo.svg" alt="Le logo du restaurant Lambda" width="156px" height="92px"> -->
                 <a href="index.html" id="logo"><img src="img/Logo.png" alt="logo du restaurant Lambda"></a>
                 <nav>
-                    <img id="burger" src="img/burger.png" alt="bouton pour ouvrir le menu">
                     <div id="nav_menu">
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="#section_about">About</a></li>
                             <li><a href="#section_ingredients">Ingredients</a></li>
-                            <!-- <li><a href="#section_menu"></a>Menu</li> -->
+    <!-- a remettre -->                        <!-- <li><a href="#section_menu">Menu</a></li> -->
                             <li><a href="#section_reviews">Reviews</a></li>
                             <!-- lien vers la div contenant la <form> au lieu de vers la section
                                      pour ne pas arriver sur les images si sur un phone -->
@@ -62,7 +61,7 @@
                                         enable-background="new 0 0 288 288" xml:space="preserve">
                                         <g id="SvgjsG1008"
                                             transform="matrix(0.9167,0,0,0.9167,11.99520762634279,11.995196186828622)">
-                                            <title>Twitter-color</title>
+                                            <title>Twitter</title>
                                             <g id="Icons">
                                                 <g id="Color-" transform="translate(-300.000000, -164.000000)">
                                                     <path id="Twitter" fill="#FFFFFF" d="M588,216.411c-10.754,4.898-22.198,8.115-33.93,9.539
@@ -88,6 +87,7 @@
                                         enable-background="new 0 0 288 288" xml:space="preserve">
                                         <g id="SvgjsG1008"
                                             transform="matrix(0.9167,0,0,0.9167,11.800277987289434,11.995185541725164)">
+                                            <title>Facebook</title>
                                             <path fill="#FFFFFF" d="M183.993,69.25h22.559V31.091c-10.922-1.136-21.898-1.696-32.88-1.68c-32.639,0-54.959,19.92-54.959,56.4
 		v31.439h-36.84v42.721h36.84v109.44h44.159v-109.44h36.721l5.518-42.721h-42.239v-27.24C162.872,77.41,166.232,69.25,183.993,69.25
 		z" />
@@ -104,6 +104,7 @@
                                         enable-background="new 0 0 288 288" xml:space="preserve">
                                         <g id="SvgjsG1008"
                                             transform="matrix(0.9167,0,0,0.9167,11.995200000000011,11.995198093414302)">
+                                            <title>Google +</title>
                                             <g>
                                                 <path fill="#FFFFFF"
                                                     d="M288,126h-36V90h-18v36h-36v18h36v36h18v-36h36V126z" />
@@ -117,6 +118,7 @@
                             </li>
                         </ul>
                     </div>
+                    <img id="burger" src="img/burger.png" alt="bouton pour ouvrir le menu">
                 </nav>
             </div>
         </div>
@@ -126,7 +128,7 @@
             <!-- <img src="img/divider_big.svg" alt="little divider"> -->
             <!-- ce svg correspond au gros divider 
                     la couleur est gérée avec  1 fill dans <svg> et 2 stroke dans les <rec>-->
-            <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="582.362px" height="107.518px"
                 viewBox="0 0 582.362 107.518" enable-background="new 0 0 582.362 107.518" xml:space="preserve"
                 fill="#ffffff">
@@ -186,8 +188,9 @@
 		c5.038,0.161,10.076,0.258,15.114,0.478c0.552,0.023,0.98,0.49,0.957,1.043C582.338,56.465,581.916,56.876,581.404,56.901" />
                 </g>
             </svg>
+
             <div id="btn_header">
-                <a id="book_table" class="btn-header" href="#reservation">BOOK A TABLE</a>
+                <a id="book_table" class="btn-header" href="#reserv_ta_table">BOOK A TABLE</a>
                 <a id="see_menu" class="btn-header" href="#section_menu">SEE THE MENU</a>
             </div>
         </div>
@@ -195,14 +198,14 @@
     </header>
 
     <main>
-        <section id="section_about">
+          <section id="section_about">
             <div class="content-width">
                 <div id="chief_words">
                     <h2>Just the right food</h2>
                     <!-- <img src="img/divider_small.svg" alt="this is just a divider"> -->
                     <!-- ce svg correspond au petit divider 
                             on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                    <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
                         viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
                         fill="#cc9900">
@@ -261,17 +264,17 @@
                     </p>
                     <img src="img/chef.png" alt="chief preparing a plate" width="219px" height="221px">
                 </div>
-                <img src="img/assiette.png" alt="a nice plate of meat and vegetables" width="621px" height="625px">
+                <img id="chief_plate" src="img/assiette.png" alt="a nice plate of meat and vegetables" width="621px" height="625px">
             </div>
         </section>
 
-        <section id="section_ingredients">
+          <section id="section_ingredients">
             <div class="content-width">
                 <div id="fine_ingredients">
                     <h2>Fine Ingredients</h2>
                     <!-- ce svg correspond au petit divider 
                             on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                    <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
                         viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
                         fill="#ffffff">
@@ -337,14 +340,315 @@
             </div>
         </section>
 
-        <!-- <section id="section_menu" class="content-width"></section> -->
+          <section id="section_menu">
+            <div class="content-width">
+                <div class="column">
+                    <!-- Appetisers -->
+                      <h2>Appetisers</h2>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
+                        viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
+                        fill="#cc9900">
+                        <g>
+                            <g>
+                                <defs>
+                                    <rect id="SVGID_1_" y="0" width="628.711" height="58.111" />
+                                </defs>
+                                <clipPath id="SVGID_2_">
+                                    <use xlink:href="#SVGID_1_" overflow="visible" />
+                                </clipPath>
+                                <path clip-path="url(#SVGID_2_)" d="M151.057,39.98L0,37.98l151.057-2c1.105-0.016,2.012,0.868,2.026,1.975
+			c0.015,1.104-0.868,2.011-1.973,2.025C151.095,39.98,151.071,39.98,151.057,39.98" />
+                            </g>
+                            <g>
+                                <defs>
+                                    <rect id="SVGID_3_" y="0" width="628.711" height="58.111" />
+                                </defs>
+                                <clipPath id="SVGID_4_">
+                                    <use xlink:href="#SVGID_3_" overflow="visible" />
+                                </clipPath>
+                                <path clip-path="url(#SVGID_4_)" d="M477.653,35.98l151.058,2l-151.058,2c-1.104,0.016-2.013-0.869-2.025-1.974
+			c-0.016-1.104,0.867-2.012,1.973-2.026C477.615,35.98,477.64,35.98,477.653,35.98" />
+                            </g>
+                            <g>
+                                <defs>
+                                    <rect id="SVGID_5_" y="0" width="628.711" height="58.111" />
+                                </defs>
+                                <clipPath id="SVGID_6_">
+                                    <use xlink:href="#SVGID_5_" overflow="visible" />
+                                </clipPath>
 
-        <section id="section_reviews">
+                                <path clip-path="url(#SVGID_6_)" fill="none" stroke="#cc9900" stroke-width="4"
+                                    stroke-linecap="round" stroke-miterlimit="10" d="
+			M151.057,37.98l88.978,0.004c1.061,0,2.079-0.423,2.829-1.173l11.523-11.521c1.562-1.563,4.095-1.563,5.657,0l29.652,29.651
+			c1.562,1.563,4.095,1.563,5.657,0l14.843-14.844c1.562-1.563,1.562-4.095,0-5.656l-9.478-9.479c-1.562-1.563-4.094-1.563-5.656,0
+			l-8.844,8.843c-1.562,1.563-1.562,4.096,0,5.657l2.645,2.645c1.562,1.563,4.094,1.563,5.657,0l2.831-2.831
+			c1.562-1.563,1.562-4.096,0-5.656l-9.441-9.441l-6.508-6.509c-1.563-1.563-4.095-1.563-5.657,0l-11.66,11.661l-6.555,6.554
+			c-1.57,1.57-1.56,4.119,0.021,5.678l1.436,1.414c1.565,1.542,4.082,1.533,5.636-0.021l27.757-27.757l12.026-12.026
+			c1.562-1.563,4.094-1.563,5.656,0l10.834,10.834c1.563,1.563,1.563,4.095,0,5.657l-6.542,6.542l-6.542-6.542
+			c-1.562-1.563-1.562-4.095,0-5.657l10.833-10.834c1.563-1.563,4.096-1.563,5.656,0l12.026,12.026l27.757,27.757
+			c1.555,1.554,4.07,1.563,5.637,0.021l1.436-1.414c1.582-1.559,1.591-4.106,0.021-5.678l-6.554-6.554l-11.661-11.661
+			c-1.562-1.563-4.094-1.563-5.655,0l-6.51,6.509l-9.439,9.441c-1.563,1.562-1.563,4.095,0,5.656l2.832,2.831
+			c1.562,1.563,4.095,1.563,5.656,0l2.645-2.645c1.562-1.563,1.562-4.095,0-5.657l-8.844-8.843c-1.563-1.563-4.096-1.563-5.656,0
+			l-9.479,9.479c-1.562,1.563-1.562,4.095,0,5.656l14.845,14.844c1.563,1.563,4.095,1.563,5.655,0l29.652-29.651
+			c1.563-1.563,4.095-1.563,5.657,0l11.521,11.521c0.751,0.75,1.77,1.173,2.829,1.173l88.979-0.004" />
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="menu-dish first-menu-dish">
+                        <div class="menu-heading">
+                            <h3>Tzatsiki</h3>
+                            <span class="dish-price">$3.99</span>
+                        </div>
+                        <p>Refreshing traditional cucumber and garlic yoghurt dip.</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-heading">
+                            <h3>Aubergine Salad</h3>
+                            <span class="dish-price">$5.50</span>
+                        </div>
+                        <p>Pureed eggplant, garlic, green pepper and tomato dip.</p>                        
+                    </div>
+                    <div class="menu-dish last-menu-dish">
+                        <div class="menu-heading">
+                            <h3>Aubergine Salad</h3>
+                            <span class="dish-price">$5.25</span>
+                        </div>
+                        <p>Pureed eggplant, garlic, green pepper and tomato dip.</p>
+                    </div>
+
+                    <!-- Salads -->
+                      <h2>Salads</h2>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
+                        viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
+                        fill="#cc9900">
+                        <g>
+                            <g>
+                                <defs>
+                                    <rect id="SVGID_1_" y="0" width="628.711" height="58.111" />
+                                </defs>
+                                <clipPath id="SVGID_2_">
+                                    <use xlink:href="#SVGID_1_" overflow="visible" />
+                                </clipPath>
+                                <path clip-path="url(#SVGID_2_)" d="M151.057,39.98L0,37.98l151.057-2c1.105-0.016,2.012,0.868,2.026,1.975
+			c0.015,1.104-0.868,2.011-1.973,2.025C151.095,39.98,151.071,39.98,151.057,39.98" />
+                            </g>
+                            <g>
+                                <defs>
+                                    <rect id="SVGID_3_" y="0" width="628.711" height="58.111" />
+                                </defs>
+                                <clipPath id="SVGID_4_">
+                                    <use xlink:href="#SVGID_3_" overflow="visible" />
+                                </clipPath>
+                                <path clip-path="url(#SVGID_4_)" d="M477.653,35.98l151.058,2l-151.058,2c-1.104,0.016-2.013-0.869-2.025-1.974
+			c-0.016-1.104,0.867-2.012,1.973-2.026C477.615,35.98,477.64,35.98,477.653,35.98" />
+                            </g>
+                            <g>
+                                <defs>
+                                    <rect id="SVGID_5_" y="0" width="628.711" height="58.111" />
+                                </defs>
+                                <clipPath id="SVGID_6_">
+                                    <use xlink:href="#SVGID_5_" overflow="visible" />
+                                </clipPath>
+
+                                <path clip-path="url(#SVGID_6_)" fill="none" stroke="#cc9900" stroke-width="4"
+                                    stroke-linecap="round" stroke-miterlimit="10" d="
+			M151.057,37.98l88.978,0.004c1.061,0,2.079-0.423,2.829-1.173l11.523-11.521c1.562-1.563,4.095-1.563,5.657,0l29.652,29.651
+			c1.562,1.563,4.095,1.563,5.657,0l14.843-14.844c1.562-1.563,1.562-4.095,0-5.656l-9.478-9.479c-1.562-1.563-4.094-1.563-5.656,0
+			l-8.844,8.843c-1.562,1.563-1.562,4.096,0,5.657l2.645,2.645c1.562,1.563,4.094,1.563,5.657,0l2.831-2.831
+			c1.562-1.563,1.562-4.096,0-5.656l-9.441-9.441l-6.508-6.509c-1.563-1.563-4.095-1.563-5.657,0l-11.66,11.661l-6.555,6.554
+			c-1.57,1.57-1.56,4.119,0.021,5.678l1.436,1.414c1.565,1.542,4.082,1.533,5.636-0.021l27.757-27.757l12.026-12.026
+			c1.562-1.563,4.094-1.563,5.656,0l10.834,10.834c1.563,1.563,1.563,4.095,0,5.657l-6.542,6.542l-6.542-6.542
+			c-1.562-1.563-1.562-4.095,0-5.657l10.833-10.834c1.563-1.563,4.096-1.563,5.656,0l12.026,12.026l27.757,27.757
+			c1.555,1.554,4.07,1.563,5.637,0.021l1.436-1.414c1.582-1.559,1.591-4.106,0.021-5.678l-6.554-6.554l-11.661-11.661
+			c-1.562-1.563-4.094-1.563-5.655,0l-6.51,6.509l-9.439,9.441c-1.563,1.562-1.563,4.095,0,5.656l2.832,2.831
+			c1.562,1.563,4.095,1.563,5.656,0l2.645-2.645c1.562-1.563,1.562-4.095,0-5.657l-8.844-8.843c-1.563-1.563-4.096-1.563-5.656,0
+			l-9.479,9.479c-1.562,1.563-1.562,4.095,0,5.656l14.845,14.844c1.563,1.563,4.095,1.563,5.655,0l29.652-29.651
+			c1.563-1.563,4.095-1.563,5.657,0l11.521,11.521c0.751,0.75,1.77,1.173,2.829,1.173l88.979-0.004" />
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="menu-dish first-menu-dish">
+                        <div class="menu-heading">
+                            <h3>Olive special</h3>
+                            <span class="dish-price">$5.99</span>
+                        </div>
+                        <p>Refreshing traditional cucumber and garlic yoghurt dip.</p>
+                    </div>
+                    <div class="menu-dish special-menu-dish">
+                        <div class="menu-heading">
+                            <h3>Greek Salad</h3>
+                            <span class="dish-price">$5.50</span>
+                        </div>
+                        <p>Pureed eggplant, garlic, green pepper and tomato dip.</p>                        
+                    </div>
+                    <div class="menu-dish margin-for-responsive">
+                        <div class="menu-heading">
+                            <h3>Gusto Salad</h3>
+                            <span class="dish-price">$5.25</span>
+                        </div>
+                        <p>Pureed eggplant, garlic, green pepper and tomato dip.</p>
+                    </div>
+                </div>
+                <div class="column">
+                        <!-- Starters -->
+                          <h2>Starters</h2>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
+                            viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
+                            fill="#cc9900">
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_1_" y="0" width="628.711" height="58.111" />
+                                    </defs>
+                                    <clipPath id="SVGID_2_">
+                                        <use xlink:href="#SVGID_1_" overflow="visible" />
+                                    </clipPath>
+                                    <path clip-path="url(#SVGID_2_)" d="M151.057,39.98L0,37.98l151.057-2c1.105-0.016,2.012,0.868,2.026,1.975
+                c0.015,1.104-0.868,2.011-1.973,2.025C151.095,39.98,151.071,39.98,151.057,39.98" />
+                                </g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_3_" y="0" width="628.711" height="58.111" />
+                                    </defs>
+                                    <clipPath id="SVGID_4_">
+                                        <use xlink:href="#SVGID_3_" overflow="visible" />
+                                    </clipPath>
+                                    <path clip-path="url(#SVGID_4_)" d="M477.653,35.98l151.058,2l-151.058,2c-1.104,0.016-2.013-0.869-2.025-1.974
+                c-0.016-1.104,0.867-2.012,1.973-2.026C477.615,35.98,477.64,35.98,477.653,35.98" />
+                                </g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_5_" y="0" width="628.711" height="58.111" />
+                                    </defs>
+                                    <clipPath id="SVGID_6_">
+                                        <use xlink:href="#SVGID_5_" overflow="visible" />
+                                    </clipPath>
+    
+                                    <path clip-path="url(#SVGID_6_)" fill="none" stroke="#cc9900" stroke-width="4"
+                                        stroke-linecap="round" stroke-miterlimit="10" d="
+                M151.057,37.98l88.978,0.004c1.061,0,2.079-0.423,2.829-1.173l11.523-11.521c1.562-1.563,4.095-1.563,5.657,0l29.652,29.651
+                c1.562,1.563,4.095,1.563,5.657,0l14.843-14.844c1.562-1.563,1.562-4.095,0-5.656l-9.478-9.479c-1.562-1.563-4.094-1.563-5.656,0
+                l-8.844,8.843c-1.562,1.563-1.562,4.096,0,5.657l2.645,2.645c1.562,1.563,4.094,1.563,5.657,0l2.831-2.831
+                c1.562-1.563,1.562-4.096,0-5.656l-9.441-9.441l-6.508-6.509c-1.563-1.563-4.095-1.563-5.657,0l-11.66,11.661l-6.555,6.554
+                c-1.57,1.57-1.56,4.119,0.021,5.678l1.436,1.414c1.565,1.542,4.082,1.533,5.636-0.021l27.757-27.757l12.026-12.026
+                c1.562-1.563,4.094-1.563,5.656,0l10.834,10.834c1.563,1.563,1.563,4.095,0,5.657l-6.542,6.542l-6.542-6.542
+                c-1.562-1.563-1.562-4.095,0-5.657l10.833-10.834c1.563-1.563,4.096-1.563,5.656,0l12.026,12.026l27.757,27.757
+                c1.555,1.554,4.07,1.563,5.637,0.021l1.436-1.414c1.582-1.559,1.591-4.106,0.021-5.678l-6.554-6.554l-11.661-11.661
+                c-1.562-1.563-4.094-1.563-5.655,0l-6.51,6.509l-9.439,9.441c-1.563,1.562-1.563,4.095,0,5.656l2.832,2.831
+                c1.562,1.563,4.095,1.563,5.656,0l2.645-2.645c1.562-1.563,1.562-4.095,0-5.657l-8.844-8.843c-1.563-1.563-4.096-1.563-5.656,0
+                l-9.479,9.479c-1.562,1.563-1.562,4.095,0,5.656l14.845,14.844c1.563,1.563,4.095,1.563,5.655,0l29.652-29.651
+                c1.563-1.563,4.095-1.563,5.657,0l11.521,11.521c0.751,0.75,1.77,1.173,2.829,1.173l88.979-0.004" />
+                                </g>
+                            </g>
+                        </svg>
+                        <div class="menu-dish first-menu-dish">
+                            <div class="menu-heading">
+                                <h3>Haloumi</h3>
+                                <span class="dish-price">$3.99</span>
+                            </div>
+                            <p>Refreshing traditional cucumber and garlic yoghurt dip.</p>
+                        </div>
+                        <div class="menu-dish last-menu-dish">
+                            <div class="menu-heading">
+                                <h3>Spinach Pie</h3>
+                                <span class="dish-price">$5.50</span>
+                            </div>
+                            <p>Pureed eggplant, garlic, green pepper and tomato dip.</p>                        
+                        </div>
+    
+                        <!-- Main Dishes -->
+                          <h2>Main Dishes</h2>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
+                            viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
+                            fill="#cc9900">
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_1_" y="0" width="628.711" height="58.111" />
+                                    </defs>
+                                    <clipPath id="SVGID_2_">
+                                        <use xlink:href="#SVGID_1_" overflow="visible" />
+                                    </clipPath>
+                                    <path clip-path="url(#SVGID_2_)" d="M151.057,39.98L0,37.98l151.057-2c1.105-0.016,2.012,0.868,2.026,1.975
+                c0.015,1.104-0.868,2.011-1.973,2.025C151.095,39.98,151.071,39.98,151.057,39.98" />
+                                </g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_3_" y="0" width="628.711" height="58.111" />
+                                    </defs>
+                                    <clipPath id="SVGID_4_">
+                                        <use xlink:href="#SVGID_3_" overflow="visible" />
+                                    </clipPath>
+                                    <path clip-path="url(#SVGID_4_)" d="M477.653,35.98l151.058,2l-151.058,2c-1.104,0.016-2.013-0.869-2.025-1.974
+                c-0.016-1.104,0.867-2.012,1.973-2.026C477.615,35.98,477.64,35.98,477.653,35.98" />
+                                </g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_5_" y="0" width="628.711" height="58.111" />
+                                    </defs>
+                                    <clipPath id="SVGID_6_">
+                                        <use xlink:href="#SVGID_5_" overflow="visible" />
+                                    </clipPath>
+    
+                                    <path clip-path="url(#SVGID_6_)" fill="none" stroke="#cc9900" stroke-width="4"
+                                        stroke-linecap="round" stroke-miterlimit="10" d="
+                M151.057,37.98l88.978,0.004c1.061,0,2.079-0.423,2.829-1.173l11.523-11.521c1.562-1.563,4.095-1.563,5.657,0l29.652,29.651
+                c1.562,1.563,4.095,1.563,5.657,0l14.843-14.844c1.562-1.563,1.562-4.095,0-5.656l-9.478-9.479c-1.562-1.563-4.094-1.563-5.656,0
+                l-8.844,8.843c-1.562,1.563-1.562,4.096,0,5.657l2.645,2.645c1.562,1.563,4.094,1.563,5.657,0l2.831-2.831
+                c1.562-1.563,1.562-4.096,0-5.656l-9.441-9.441l-6.508-6.509c-1.563-1.563-4.095-1.563-5.657,0l-11.66,11.661l-6.555,6.554
+                c-1.57,1.57-1.56,4.119,0.021,5.678l1.436,1.414c1.565,1.542,4.082,1.533,5.636-0.021l27.757-27.757l12.026-12.026
+                c1.562-1.563,4.094-1.563,5.656,0l10.834,10.834c1.563,1.563,1.563,4.095,0,5.657l-6.542,6.542l-6.542-6.542
+                c-1.562-1.563-1.562-4.095,0-5.657l10.833-10.834c1.563-1.563,4.096-1.563,5.656,0l12.026,12.026l27.757,27.757
+                c1.555,1.554,4.07,1.563,5.637,0.021l1.436-1.414c1.582-1.559,1.591-4.106,0.021-5.678l-6.554-6.554l-11.661-11.661
+                c-1.562-1.563-4.094-1.563-5.655,0l-6.51,6.509l-9.439,9.441c-1.563,1.562-1.563,4.095,0,5.656l2.832,2.831
+                c1.562,1.563,4.095,1.563,5.656,0l2.645-2.645c1.562-1.563,1.562-4.095,0-5.657l-8.844-8.843c-1.563-1.563-4.096-1.563-5.656,0
+                l-9.479,9.479c-1.562,1.563-1.562,4.095,0,5.656l14.845,14.844c1.563,1.563,4.095,1.563,5.655,0l29.652-29.651
+                c1.563-1.563,4.095-1.563,5.657,0l11.521,11.521c0.751,0.75,1.77,1.173,2.829,1.173l88.979-0.004" />
+                                </g>
+                            </g>
+                        </svg>
+                        <div class="menu-dish first-menu-dish">
+                            <div class="menu-heading">
+                                <h3>Cornish Mackerel</h3>
+                                <span class="dish-price">$5.99</span>
+                            </div>
+                            <p>Refreshing traditional cucumber and garlic yoghurt dip.</p>
+                        </div>
+                        <div class="menu-dish special-menu-dish">
+                            <div class="menu-heading">
+                                <h3>Roast Lamb</h3>
+                                <span class="dish-price">$5.50</span>
+                            </div>
+                            <p>Pureed eggplant, garlic, green pepper and tomato dip.</p>                        
+                        </div>
+                        <div class="menu-dish">
+                            <div class="menu-heading">
+                                <h3>Friezed Chicken</h3>
+                                <span class="dish-price">$5.25</span>
+                            </div>
+                            <p>Pureed eggplant, garlic, green pepper and tomato dip.</p>
+                        </div>
+                        <div class="menu-dish">
+                            <div class="menu-heading">
+                                <h3>Pastistio</h3>
+                                <span class="dish-price">$5.99</span>
+                            </div>
+                            <p>Refreshing traditional cucumber and garlic yoghurt dip.</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+          <section id="section_reviews">
             <div>
                 <h2>Guest Reviews</h2>
                 <!-- ce svg correspond au petit divider 
                         on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
                     viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
                     fill="#ffffff">
@@ -415,7 +719,7 @@
                     <h2>Just the right food</h2>
                     <!-- ce svg correspond au petit divider 
                                 on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                    <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="628.711px" height="58.111px"
                         viewBox="0 0 628.711 58.111" enable-background="new 0 0 628.711 58.111" xml:space="preserve"
                         fill="#cc9900">
@@ -476,38 +780,43 @@
                     </p>
                     <!-- <div id="reserv-forms"> -->
                     <form action="">
-
-                        <div>
-                            <label for="name">Name</label>
-                            <input type="text" name="name" placeholder="your name*">
+                        <div class="inputs_line">
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" name="name" placeholder="your name*">
+                            </div>
+                            <div>
+                                <label for="mail">Mail</label>
+                                <input type="mail" name="mail" placeholder="your mail*">
+                            </div>
                         </div>
-                        <div>
-                            <label for="mail">Mail</label>
-                            <input type="mail" name="mail" placeholder="your mail*">
+                        <div class="inputs_line">
+                            <div id="form_date">
+                                <label for="date">Date</label>
+                                <input type="date" name="date" placeholder="date*">
+                            </div>
+                            <div>
+                                <label for="party_number">Party number</label>
+                                <input type="number" name="party_number" placeholder="party number*">
+                            </div>
                         </div>
-                        <div id="form_date">
-                            <label for="name">Date</label>
-                            <input type="date" name="date" placeholder="date*">
-                        </div>
-                        <div>
-                            <label for="name">Party number</label>
-                            <input type="number" name="party_number" placeholder="party number*">
-                        </div>
-                        <input id="btn_book_now" type="submit" value="Book now!">
+                        <!-- <input id="btn_book_now" type="submit" value="Book now!"> -->
+                          <input id="btn_book_now" type="button" value="Book now!">
                     </form>
                     <!-- </div> -->
-                </div>
+                  </div>
             </div>
         </section>
+
     </main>
 
-    <footer>
+      <footer>
         <div class="content-width">
             <div class="vertical-flex">
                 <h2>About Us</h2>
                 <!-- ce svg correspond au petit divider 
                             on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" width="628.711px" height="58.111px" viewBox="0 0 628.711 58.111"
                     enable-background="new 0 0 628.711 58.111" xml:space="preserve" fill="#989898">
                     <g>
@@ -568,7 +877,7 @@
                 <h2>Opening Hours</h2>
                 <!-- ce svg correspond au petit divider 
                             on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" width="628.711px" height="58.111px" viewBox="0 0 628.711 58.111"
                     enable-background="new 0 0 628.711 58.111" xml:space="preserve" fill="#989898">
                     <g>
@@ -624,9 +933,9 @@
                     <span class="bold">Fri-Sun:</span> 7:00am-10:00pm
                 </p>
                 <div class=logos>
-                    <a href="#logo">
+                    <!-- <a href="#logo"> -->
                         <!-- logo american express -->
-                        <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px"
                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
                             <g id="surface1">
@@ -637,10 +946,10 @@
    v1.688h4.844l2.281-2.563l-2.031-2.313L31.563,21.719z" />
                             </g>
                         </svg>
-                    </a>
-                    <a href="#logo">
+                    <!-- </a>
+                    <a href="#logo"> -->
                         <!-- logo paypal -->
-                        <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px"
                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
                             <g id="surface1">
@@ -654,10 +963,10 @@
    c7.801,0,13.695-4.688,15.094-12.188c1-4.602-0.293-7.523-1.594-9.125C44.105,12.387,40.793,11.313,40.094,11.313z" />
                             </g>
                         </svg>
-                    </a>
-                    <a href="#logo">
+                    <!-- </a>
+                    <a href="#logo"> -->
                         <!-- logo visa -->
-                        <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px"
                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
                             <g id="surface1">
@@ -671,10 +980,10 @@
    l1,5.063C12.055,21.453,6.25,19.656,6.25,19.656z M37.938,22.844l-1.625,4.188h2.438L37.938,22.844z" />
                             </g>
                         </svg>
-                    </a>
-                    <a href="#logo">
+                    <!-- </a>
+                    <a href="#logo"> -->
                         <!-- logo discover -->
-                        <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px"
                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
                             <g id="surface1">
@@ -695,14 +1004,14 @@
    c2.176,0,2.313-1.566,2.313-2.031c0-0.973-0.574-2.063-2.219-2.063H7.125z" />
                             </g>
                         </svg>
-                    </a>
-                </div>
+                    <!-- </a> -->
+                  </div>
             </div>
             <div class="vertical-flex">
                 <h2>Our Location</h2>
                 <!-- ce svg correspond au petit divider 
                             on change sa couleur avec un fill dans <svg> et un stroke dans path pour la partie centrale -->
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" width="628.711px" height="58.111px" viewBox="0 0 628.711 58.111"
                     enable-background="new 0 0 628.711 58.111" xml:space="preserve" fill="#989898">
                     <g>
@@ -758,13 +1067,13 @@
                 <div class=logos>
                     <a href="#logo">
                         <!-- logo facebook -->
-                        <svg version="1.1" id="logo_facebook" xmlns:svgjs="http://svgjs.com/svgjs"
+                          <svg version="1.1" id="logo_facebook" xmlns:svgjs="http://svgjs.com/svgjs"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                             y="0px" width="288px" height="288px" viewBox="0 0 288 288"
                             enable-background="new 0 0 288 288" xml:space="preserve">
                             <g id="SvgjsG1008"
                                 transform="matrix(0.9167,0,0,0.9167,11.800277987289434,11.995185541725164)">
-                                <path fill="#FFFFFF" d="M183.993,69.25h22.559V31.091c-10.922-1.136-21.898-1.696-32.88-1.68c-32.639,0-54.959,19.92-54.959,56.4
+                                <path d="M183.993,69.25h22.559V31.091c-10.922-1.136-21.898-1.696-32.88-1.68c-32.639,0-54.959,19.92-54.959,56.4
 v31.439h-36.84v42.721h36.84v109.44h44.159v-109.44h36.721l5.518-42.721h-42.239v-27.24C162.872,77.41,166.232,69.25,183.993,69.25
 z" />
                             </g>
@@ -772,7 +1081,7 @@ z" />
                     </a>
                     <a href="#logo">
                         <!-- logo you-tube -->
-                        <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px"
                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
                             <g id="surface1">
@@ -797,7 +1106,7 @@ z" />
                     </a>
                     <a href="#logo">
                         <!-- logo twitter -->
-                        <svg version="1.1" id="SvgjsSvg1001" xmlns:svgjs="http://svgjs.com/svgjs"
+                          <svg version="1.1" id="SvgjsSvg1001" xmlns:svgjs="http://svgjs.com/svgjs"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                             y="0px" width="288px" height="288px" viewBox="0 0 288 288"
                             enable-background="new 0 0 288 288" xml:space="preserve">
@@ -806,7 +1115,7 @@ z" />
                                 <title>Twitter-color</title>
                                 <g id="Icons">
                                     <g id="Color-" transform="translate(-300.000000, -164.000000)">
-                                        <path id="Twitter" fill="#FFFFFF" d="M588,216.411c-10.754,4.898-22.198,8.115-33.93,9.539
+                                        <path id="Twitter" d="M588,216.411c-10.754,4.898-22.198,8.115-33.93,9.539
     c12.421-7.666,21.649-19.57,25.98-33.51c-11.565,7.042-24.269,12.01-37.541,14.682C531.762,195.35,516.396,188,499.386,188
     c-32.61,0-59.064,27.126-59.064,60.588c0,4.746,0.509,9.36,1.523,13.8c-49.11-2.539-92.64-26.628-121.8-63.33
     c-5.259,9.3-8.013,19.807-7.992,30.492c0,21.012,10.428,39.558,26.281,50.429c-9.406-0.311-18.594-2.905-26.773-7.559v0.744
@@ -820,7 +1129,7 @@ z" />
                         </svg>
                     </a>
                     <a href="#logo">
-                        <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px"
                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
                             <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M21,36c0,1.1-0.9,2-2,2h-7
@@ -832,6 +1141,10 @@ z" />
             </div>
         </div>
     </footer>
+
+
+    <script src="js/scroll.js"></script>
+    <script src="js/smoothScroll.js"></script>
 </body>
 
 </html>

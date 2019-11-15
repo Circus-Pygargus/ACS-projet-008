@@ -1,5 +1,13 @@
 /* ############## Variables ############## */
 /* ############## Breakpoints ############## */
+//  à utiliser avec un :
+//         @include desktop {
+//             css code;
+//         }
+//         @include tablet {
+//             css code;
+//         }
+
 @mixin desktop {
     @media screen and (min-width: 992px) and (max-width: 1199px) {
         @content;
@@ -24,31 +32,20 @@
     }
 }
 
-/* à utiliser avec un :
-        @include desktop {
-            css code;
-        }
-        @include tablet {
-            css code;
-        }
-*/
 
-/* je ne vais pas utiliser les mixin pour l'instant :
-        les changements appliqués lors d'un changement de taille de fenêtre 
-        n'apparaissent pas dans l'inspecteur.
-        faut déjà que je comprenne bien tout avant d'utiliser les mixin ...
 
-        Donc pour gagner du temps, à copier coller dès que nécessaire :
-        
-        @media screen and (min-width: 992px) and (max-width: 1199px) {
-        }
-        @media screen and (min-width: 768px) and (max-width: 991px) {
-        }
-        @media screen and (min-width: 576px) and (max-width: 767px) {
-        }
-        @media screen and (max-width: 575px) {
-        }
-*/
+/* ############## Animations ############## */
+@keyframes anim_navbar_on-scroll-up {
+    0% { top: -500px;}
+    10% {top: -170px}
+    100% {top: 0px;}
+}
+
+@keyframes anim_navbar_on-scroll-down {
+    0% {top: 0px;}
+    90% {top: -170px;}
+    100% {top: -500px;}
+}
 
 
 
@@ -59,8 +56,8 @@
 }
 
 @font-face {
-    font-family: 'gentium book basic';
-    src: url(../fonts/gentium-book-basic.bold.ttf);
+    font-family: 'gentium-book-basic';
+    src: url("../fonts/gentium-book-basic.bold.ttf");
 }
 
 @font-face {
@@ -73,10 +70,6 @@
     src: url('../fonts/open-sans.regular.ttf');
 }
 
-/* correspondances style polices :
-regular et  italic : 400
-bold : 700
-*/
 
 
 /* ############## let's go ############## */
@@ -84,18 +77,18 @@ bold : 700
     margin: 0;
     padding: 0;
     text-decoration: none;
-    // liste à puces
     list-style-type: none;
 }
 
 body {
     width: 100vw;
+    overflow-x: hidden;
 
     a {
         color: white;
     }
 
-    // images are now responsive
+    /* responsive images */
     img {
         max-width: 100%;
         height: auto;
@@ -104,25 +97,25 @@ body {
     .content-width {
         width: 1024px;
 
-        @media screen and (min-width: 992px) and (max-width: 1199px) {
+        @include desktop {
             width: 90%;
             margin-left: 10%;
             margin-right: 10%;
         }
 
-        @media screen and (min-width: 768px) and (max-width: 991px) {
+        @include tablet {
             width: 90%;
             margin-left: 10%;
             margin-right: 10%;
         }
 
-        @media screen and (min-width: 576px) and (max-width: 767px) {
+        @include landscapephone {
             width: 90%;
             margin-left: 10%;
             margin-right: 10%;
         }
 
-        @media screen and (max-width: 575px) {
+        @include phone {
             width: 90%;
             margin-left: 10%;
             margin-right: 10%;
@@ -134,8 +127,10 @@ body {
     }
 
     header {
+        position: relative;
         width: 100%;
         background-image: url('../img/background_header.jpg');
+        background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -143,8 +138,8 @@ body {
 
         #header_top-bg {
             width: 100%;
-            background-image: linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0));
-
+            background-image: linear-gradient(rgba(1, 1, 1, .5), rgba(1, 1, 1, 0));
+        
             #header_top {
                 width: 1170px;
                 display: flex;
@@ -152,134 +147,139 @@ body {
                 margin: auto;
                 padding: 0 15px;
 
-                @media screen and (min-width: 992px) and (max-width: 1199px) {
-                    width: 970px;
+                @include desktop {
+                    width: 960px;
                 }
-
-                @media screen and (min-width: 768px) and (max-width: 991px) {
+                @include tablet {
                     width: 750px;
                 }
-
-                @media screen and (min-width: 576px) and (max-width: 767px) {
+                @include landscapephone {
                     width: 550px;
                 }
-
-                @media screen and (max-width: 575px) {
+                @include phone {
                     width: 100%;
+                    padding: 0;
                 }
 
                 #logo {
-                    //     display: block;
-                    //     // cache le texte en l'indentant vers la gauche
-                    //     text-indent: -200px;
-                    //     // défini la taille du logo
                     width: 156px;
                     height: 92px;
-                    //     // pose l'image
-                    //     background: url('../img/logo.svg');
-                    //     // on s'assure que l'image prend bien la taille voulue
-                    //     background-size: 156px, 92px;
-                    //     // fill: white;
+                    flex-shrink: 0;
+
+                    @include phone {
+                        width: calc(156px * .8);
+                        height: calc(92px * .8);
+                        margin-left: 15px;
+                    }
                 }
-
+        
                 nav {
+                    // position: relative;
                     display: flex;
-                    // flex-direction: row;
                     align-items: center;
-
-                    @media screen and (min-width: 576px) and (max-width: 767px) {
+        
+                    @include tablet {
                         width: 50%;
                         justify-content: space-around;
                     }
-
-                    @media screen and (max-width: 575px) {
+        
+                    @include landscapephone {
                         width: 50%;
                         justify-content: space-around;
                     }
-
+        
+                    @include phone {
+                        width: 50%;
+                        justify-content: space-around;
+                    }
+        
                     ul {
                         display: flex;
-                        flex-direction: row;
                         justify-content: space-between;
                     }
-
+        
                     #burger {
-                        // background-image: url('../img/bouton_menu.png');
                         display: none;
-
-                        @media screen and (min-width: 576px) and (max-width: 767px) {
-                            display: inline;
-                            width: 50px;
-                            padding: 7px 7px 8px 7px;
-                        }
-
-                        @media screen and (max-width: 575px) {
-                            display: inline;
-                            width: 50px;
-                            padding: 7px 7px 8px 7px;
-                        }
-                    }
-
-                    #burger:hover {
-                        cursor: pointer;
                         padding: 5px 5px 6px 5px;
-                        border: 2px solid #cc9900;
+                        border: 2px solid rgba(204, 153, 0, 0);
+                        
+                        @include tablet {
+                            display: inline;
+                            width: 50px;
+                        }
+                        
+                        @include landscapephone {
+                            display: inline;
+                            width: 50px;
+                        }
+        
+                        @include phone {
+                            display: inline;
+                            width: 50px;
+                        }
+                        
+                        &:hover {
+                            cursor: pointer;
+                            border: 2px solid rgba(204, 153, 0, 1);
+                        }
                     }
-
+        
                     #nav_menu {
-                        font-family: 'gentium book basic', sans-serif;
+                        font-family: 'gentium-book-basic', 'sans-serif';
                         font-weight: 700;
                         font-size: 21px;
-
-                        @media screen and (min-width: 576px) and (max-width: 767px) {
+        
+                        @include tablet {
                             display: none;
                         }
-
-                        @media screen and (max-width: 575px) {
+        
+                        @include landscapephone {
                             display: none;
                         }
-
+            
+                        @include phone {
+                            display: none;
+                        }
+        
                         ul {
                             li {
                                 a {
                                     padding: 20px 34px;
+        
+                                    // @include tablet {
+                                    //     padding: 20px 14px;
+                                    // }
+        
+                                    &:hover {
+                                        border-top: 3px solid white;
+                                    } 
 
-                                    @media screen and (min-width: 768px) and (max-width: 991px) {
-                                        padding: 20px 14px;
+                                    @include desktop {
+                                        padding: 20px 25px;
                                     }
-                                }
-
-                                a:hover {
-                                    border-top: 3px solid white;
-                                }
+                                } 
                             }
                         }
                     }
-
+        
                     #nav_social {
                         ul {
                             li {
                                 a {
                                     display: inline;
                                     color: white;
-
+        
                                     svg {
                                         width: 20px;
                                         height: 20px;
                                         padding-right: 10px;
                                     }
-
-                                    // svg:hover {
-                                    //     path{
-                                    //     fill: #cc9900;
-                                    //     }
-                                    // }
                                 }
-                            }
-
-                            li:hover {
-                                path {
-                                    fill: #cc9900;
+        
+                                &:hover {
+                                    path {
+                                        fill: #cc9900;
+                                    }
                                 }
                             }
                         }
@@ -288,140 +288,149 @@ body {
             }
         }
 
+        .nav_default-place {
+            position: absolute;
+        }
+             
+        .nav_on-scroll-up {
+            position: fixed;
+            // top: 0;
+            animation: anim_navbar_on-scroll-up .8s ease-out;
+        }
+
+        .nav_on-scroll-down {
+            position: fixed;
+            animation: anim_navbar_on-scroll-down .8s ease-in 0s 1 normal forwards;
+        }
+        
         #header_bottom {
-            // la taille est donnée par .content-width
             display: flex;
             flex-direction: column;
             margin: auto;
 
             h1 {
-                margin-top: 100px;
+                margin-top: 192px;
                 font-family: 'yesevaOne';
                 text-align: center;
                 font-size: 96px;
                 text-shadow: 2px 2px black;
-
-                @media screen and (min-width: 992px) and (max-width: 1199px) {
+    
+                @include desktop {
                     font-size: 80px;
                 }
-
-                @media screen and (min-width: 768px) and (max-width: 991px) {
-                    font-size: 64px;
+    
+                @include tablet {
+                    font-size: 64;
                 }
-
-                @media screen and (min-width: 576px) and (max-width: 767px) {
+    
+                @include landscapephone {
                     font-size: 48px;
                 }
-
-                @media screen and (max-width: 575px) {
+    
+                @include phone {
                     font-size: 48px;
                 }
             }
-
+    
             svg {
                 width: 250px;
                 margin: 50px auto;
             }
-
+    
             #btn_header {
                 margin: auto;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                @media screen and (max-width: 575px) {
+    
+                @include phone {
                     flex-direction: column;
                 }
-
+    
                 .btn-header {
                     display: inline-block;
                     font-family: 'lato';
                     font-size: 20px;
                     line-height: 20px;
                     padding: 15px 40px;
-                    // margin: auto;
                     margin-bottom: 100px;
                 }
 
                 #book_table {
                     margin-right: 15px;
-                    background-color: rgba(0, 0, 0, 0.5);
+                    background-color: rgba(0, 0, 0, .5);
                     border: 1px solid black;
 
-                    @media screen and (min-width: 576px) and (max-width: 767px) {
-                        // margin-right: 0;
+                    @include tablet {
+
                     }
-    
-                    @media screen and (max-width: 575px) {
+
+                    @include phone {
                         margin-right: 0;
                     }
                 }
+
                 #book_table:hover {
                     border: 1px solid #cc9900;
                     color: #cc9900;
                 }
+
                 #see_menu {
                     margin-left: 15px;
-                    background-color: rgba(255, 255, 255, 0.3);
+                    background-color: rgba(255, 255, 255, .3);
                     border: 1px solid white;
 
-                    @media screen and (min-width: 576px) and (max-width: 767px) {
-                        // margin-left: 0;
+                    @include tablet {
+
                     }
-    
-                    @media screen and (max-width: 575px) {
+
+                    @include phone {
                         margin-left: 0;
                     }
-                }
-                #see_menu:hover {
-                    border: 1px solid #cc9900;
-                    color: #cc9900;
+
+                    &:hover {
+                        border: 1px solid #cc9900;
+                        color: #cc9900;
+                    }
                 }
             }
         }
-    }
-
+    }    
+    
     main {
         #section_about {
             width: 100%;
-            background-image: url(../img/pattern_rond.jpg);
+            background-image: url('../img/pattern_rond.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
 
             div.content-width {
-                /* prend sa taille avec .content-width */
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin: auto;
 
-                @media screen and (min-width: 992px) and (max-width: 1199px) {
-                    flex-wrap: wrap;
-                }
+                // @include desktop {
+                //     flex-wrap: wrap;
+                // }
 
-                @media screen and (min-width: 768px) and (max-width: 991px) {
-                    flex-wrap: wrap;
-                }
+                // @include tablet {
+                //     flex-wrap: wrap;
+                // }
 
-                @media screen and (min-width: 576px) and (max-width: 767px) {
-                    flex-wrap: wrap;
-                }
+                // @include landscapephone {
+                //     flex-wrap: wrap;
+                // }
 
-                @media screen and (max-width: 575px) {
-                    flex-wrap: wrap;
-                }
+                // @include phone {
+                //     flex-wrap: wrap;
+                // }
 
-                img {
-                    width: 512px;
-                    height: 515px;
-                    @media screen and (max-width: 575px) {
-                        width: 70vw;
-                        height: 70vw;
-                    }
-                }
+                
 
                 #chief_words {
-                    width: 50%;
+                    width: 80%;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
@@ -447,10 +456,32 @@ body {
                         color: #5d5d5d;
                     }
 
-                    img:last-child {
+                    img {
                         width: 219px;
-                        height: 221px;
+                        height: 211px;
                         margin: 50px 0 0 40px;
+                    }
+                }
+                
+                img#chief_plate {
+                    width: 512px;
+                    height: 515px;
+
+                    @include tablet {
+                        width: 50%;
+                        height: 50%;
+                    }
+
+                    @include landscapephone {
+                        // width: 50%;
+                        // height: 50%;
+                        display: none;
+                    }
+
+                    @include phone {
+                        // width: 70vw;
+                        // height: 70vw;
+                        display: none;
                     }
                 }
             }
@@ -459,27 +490,25 @@ body {
         #section_ingredients {
             width: 100%;
             background-image: url('../img/background_ingredients.jpg');
+            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
 
             div.content-width {
-                // prend sa taille avec .content-width
                 display: flex;
                 justify-content: flex-end;
                 margin: auto;
 
-                @media screen and (min-width: 992px) and (max-width: 1199px) {}
-
-                @media screen and (min-width: 768px) and (max-width: 991px) {                    
+                @include tablet {
                     justify-content: center;
                 }
 
-                @media screen and (min-width: 576px) and (max-width: 767px) {
+                @include landscapephone {
                     justify-content: center;
                 }
 
-                @media screen and (max-width: 575px) {
+                @include phone {
                     justify-content: center;
                 }
 
@@ -487,9 +516,107 @@ body {
                     width: 45.5%;
                     display: flex;
                     flex-direction: column;
-                    background-color: rgba(0, 0, 0, 0.5);
+                    background-color: rgba(0, 0, 0, .5);
                     margin: 100px 0;
                     padding: 50px;
+
+                    @include phone {
+                        width: 230px;
+                        margin: 100px auto;
+                        padding: 50px 30px;
+                    }
+
+                    h2 {
+                        text-align: center;
+                        font-family: 'yesevaOne';
+                        font-size: 36px;
+                        color: #cc9900;
+                    }
+
+                    svg {
+                        width: 255px;
+                        margin: auto;
+                    }
+                    
+                    p {
+                        font-family: 'lato';
+                        text-align: center;
+                        font-size: 17px;
+                        line-height: 1.7;
+                        color: white;
+                    }
+
+                    #miniatures_ingredients {
+                        width: 90%;
+                        display: flex;
+                        justify-content: space-between;
+                        margin: auto;
+                        margin-top: 50px;
+
+                        // @include landscapephone {
+                        //     margin: 0;
+                        // }
+
+                        @include phone {
+                            width: 100%;
+                            margin: 0;
+                        }
+
+                        img {
+
+                            @include landscapephone {
+                                width: 75px;
+                                height: 75px;
+                            }
+                            
+                            @include phone {
+                                width: 55px;
+                                height: 55px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #section_menu {
+            width: 100%;
+            background-image: url('../img/pattern_hexagones.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 100px 0;
+
+            div.content-width {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 auto;
+
+                @include landscapephone {
+                    flex-wrap: wrap;
+                }
+
+                @include phone {
+                    flex-wrap: wrap;
+                }
+
+                div.column {
+                    display: flex;
+                    flex-direction: column;
+                    width: 45.5%;
+                    // margin: 100px 0;
+                    padding: 0 50px;
+
+                    @include landscapephone {
+                        width: 90%;
+                        margin: auto;
+                    }
+
+                    @include phone {
+                        width: 90%;
+                        margin: auto;
+                        padding: 0;
+                    }
 
                     h2 {
                         text-align: center;
@@ -503,34 +630,74 @@ body {
                         margin: auto;
                     }
 
-                    p {
-                        font-family: 'lato';
-                        text-align: center;
-                        font-size: 17px;
-                        line-height: 1.7;
-                        color: #ffffff;
-                    }
-
-                    #miniatures_ingredients {
-                        width: 90%;
+                    div.menu-dish {
                         display: flex;
-                        justify-content: space-between;
-                        margin: auto;
-                        margin-top: 50px;
-                        @media screen and (max-width: 575px) {
-                            margin: 0;
+                        flex-direction: column;
+                        margin-bottom: 15px;
+                        padding: 10px 10px 11px 11px;
+
+                        // &.first-menu-dish {
+                        //     margin-top: 10px;
+                        // }
+                        &.last-menu-dish {
+                            margin-bottom: 45px;
                         }
 
-                        img {
+                        &.special-menu-dish {
+                            border: 1px solid rgba(204, 153, 0, .5);
+                            position: relative;
 
-                            @media screen and (min-width: 576px) and (max-width: 767px) {
-                                width: 75px;
-                                height: 75px;
+                            ::after {
+                                width: 69px;
+                                height: 22px;
+                                background-color: rgba(204, 153, 0, .5);
+                                content: 'Special';
+                                font-family: 'lato';
+                                font-size: 14px;
+                                color: white;
+                                position: absolute;
+                                top: -22px;
+                                right: 0;
+                                padding-left: 12px;
+                            }
+                        }
+
+                        &.margin-for-responsive {
+
+                            @include landscapephone {
+                                margin-bottom: 45px;
                             }
 
-                            @media screen and (max-width: 575px) {
-                                width: 55px;
-                                height: 55px;
+                            @include phone {
+                                margin-bottom: 45px;
+                            }
+                        }
+
+                        div.menu-heading {
+                            font-family: 'yesevaOne';
+                            font-size: 21px;
+                            color: #cc9900;
+                            border-bottom: 1px solid rgba(204, 153, 0, .5);
+                            // margin: 10px 0 12px;
+                            margin: 0 0 12px;
+                            padding: 0 0 10px;
+
+                            @include tablet {
+                                font-size: 16px;
+                            }
+                            
+                            h3 {
+                                display: inline-block;
+                                font-weight: 400;
+                            }
+
+                            span.dish-price {
+                                float: right;
+                            }
+
+                            p {
+                                font-family: 'lato';
+                                font-size: 16px;
                             }
                         }
                     }
@@ -541,6 +708,7 @@ body {
         #section_reviews {
             width: 100%;
             background-image: url('../img/background_reviews.jpg');
+            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -557,15 +725,16 @@ body {
                 margin: 100px 0;
                 padding: 50px 50px;
 
-                @media screen and (max-width: 575px) {
-                    width: 80vw;
+                @include phone {
+                    width: 80%;
+                    padding: 50px 5%;
                 }
-
+            
                 h2 {
                     text-align: center;
                     font-family: 'yesevaOne';
                     font-size: 36px;
-                    color: #ffffff;
+                    color: white;
                 }
 
                 svg {
@@ -573,16 +742,26 @@ body {
                     margin: auto;
                 }
 
-                p {
+                p {                    
+                    position: relative;
                     font-family: 'lato';
                     text-align: center;
                     font-size: 17px;
                     line-height: 1.7;
-                    color: #ffffff;
+                    color: white;
+                
+                    // &:before {
+                    //     content: '“';
+                    //     font-family: Georgia, 'Times New Roman', Times, serif;
+                    //     font-size: 96px;
+                    //     position: relative;
+                    //     top: 0;
+                    //     left: 0;
+                    // }
 
                     span {
                         display: block;
-                        font-family: 'gentium book basic';
+                        font-family: 'gentium-book-basic';
                         text-align: center;
                         font-size: 12px;
                         padding: 30px 0;
@@ -599,53 +778,86 @@ body {
             background-size: cover;
 
             div.content-width {
-                // la taille ets donnée par la .content-width
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 margin: auto;
-                @media screen and (min-width: 992px) and (max-width: 1199px) {
-                    flex-wrap: wrap;
-                }
-                @media screen and (min-width: 768px) and (max-width: 991px) {
-                    flex-wrap: wrap;
-                }
-                @media screen and (min-width: 576px) and (max-width: 767px) {
+
+                // @include desktop {
+                //     flex-wrap: wrap;
+                // }
+
+                @include tablet {
                     flex-wrap: wrap;
                 }
 
-                @media screen and (max-width: 575px) {
+                @include landscapephone {
+                    flex-wrap: wrap;
+                }
+
+                @include phone {
                     flex-wrap: wrap;
                 }
 
                 #images_assiettes {
                     display: flex;
                     justify-content: center;
-                    // flex-wrap: wrap;
-                    // @media screen and (min-width: 576px) and (max-width: 767px) {
-                    //     flex-direction: column;
-                    // }
 
-                    // @media screen and (max-width: 575px) {
-                    //     flex-direction: column;
-                    // }
+                    @include tablet {
+                        margin: auto;
+                    }
+
+                    @include landscapephone {
+                        margin: auto;
+                    }
+
                     img {
                         padding: 100px 8px;
-                        @media screen and (min-width: 576px) and (max-width: 767px) {
-                            width: 35%;
+
+                        @include desktop {
+                            width: 220px;
                         }
-    
-                        @media screen and (max-width: 575px) {
+
+                        @include tablet {
+                            width: 40%;
+                            padding: 100px 20px 20px;
+                        }
+
+                        @include landscapephone {
                             width: 35%;
+                            padding: 100px 8px 60px;
+                        }
+
+                        @include phone {
+                            width: 35%;
+                            padding: 100px 8px 60px;
                         }
                     }
                 }
+
+                
 
                 #reserv_ta_table {
                     width: 500px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    padding: 93px 50px;
+                    align-content: space-between;
+                    padding: 93px 0 93px 100px;
+
+                    @include tablet {
+                        padding: 50px 0 93px 0;
+                        margin: auto;
+                    }
+
+                    @include landscapephone {
+                        padding: 0 0 93px 0;
+                        margin: auto;
+                    }
+
+                    @include phone {
+                        padding: 0 0 93px 0;
+                        margin: auto;
+                    }
 
                     h2 {
                         text-align: center;
@@ -670,41 +882,75 @@ body {
                     form {
                         width: 100%;
                         display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-around;
+                        flex-direction: column;
+                        // justify-content: space-around;
 
-                        div {
+                        div.inputs_line {
                             display: flex;
-                            flex-direction: column;
-                            padding-top: 5px;
+                            justify-content: space-between;
+                            // flex-direction: column;
+                            // margin: 0 10px;
+                            // padding-top: 5px;
 
-                            label {
-                                font-family: 'openSans';
-                                font-weight: 700;
-                                color: #cc9900;
+                            @include phone {
+                                flex-wrap: wrap;
                             }
 
-                            input {
-                                width: 150px;
-                                padding: 10px 0 10px 13px;
-                                font-family: 'openSans';
-                                font-style: italic;
+                            div {
+                                display: flex;
+                                flex-direction: column;
+                                padding-top: 5px;
+
+                                @include phone {
+                                    width: 80%;
+                                    margin: auto;
+
+                                    &:first-of-type {
+                                        padding-bottom: 30px;
+                                    }
+                                }
+
+                                label {
+                                    font-family: 'openSans';
+                                    font-weight: 700;
+                                    color: #cc9900;
+                                }
+    
+                                input {
+                                    width: 150px;
+                                    padding: 10px 0 10px 13px;
+                                    font-family: 'openSans';
+                                    font-style: italic;
+
+                                    &:hover {
+                                        border: 2px solid #cc9900;
+                                    }
+
+                                    @include phone {
+                                        width: 100%;
+                                        // margin: auto;
+                                    }
+                                }
                             }
 
-                            input:hover {
-                                border: 1px solid #cc9900;
-                            }
-                        }
+                            #form_date {
+                                input {
+                                    width: 150px;
+                                    padding: 7.5px 0 7.5px 13px;
 
-                        #form_date {
-                            input {
-                                width: 164px;
-                                padding: 7.5px 0;
+                                    @include phone {
+                                        width: 100%;
+                                        // margin: auto;
+                                        // padding: 7.5px 0 7.5px 0;
+                                    }
+                                }
                             }
-                        }
 
-                        div:last-of-type {
-                            padding-bottom: 30px;
+                            
+    
+                            div:last-of-type {
+                                padding-bottom: 30px;
+                            }
                         }
 
                         #btn_book_now {
@@ -715,10 +961,12 @@ body {
                             color: white;
                             background-color: #cc9900;
                             border: none;
-                        }
+                            align-self: center;
 
-                        #btn_book_now:hover {
-                            border: 1px solid grey;
+                            &:hover {
+                                border: 1px solid grey;
+                                color: grey;
+                            }
                         }
                     }
                 }
@@ -731,17 +979,17 @@ body {
         background-color: #191919;
 
         div.content-width {
-            // la taille est donnée dans .content-width
             display: flex;
             justify-content: space-between;
             margin: auto;
             padding: 50px 0;
-            @media screen and (min-width: 576px) and (max-width: 767px) {
+
+            @include landscapephone {
                 flex-direction: column;
                 align-items: center;
             }
 
-            @media screen and (max-width: 575px) {
+            @include phone {
                 flex-direction: column;
                 align-items: center;
             }
@@ -752,18 +1000,18 @@ body {
                 justify-content: center;
                 align-items: center;
                 width: 23%;
-                @media screen and (min-width: 576px) and (max-width: 767px) {
+
+                @include landscapephone {
                     width: 70%;
                     margin-top: 75px;
                 }
-    
-                @media screen and (max-width: 575px) {
+
+                @include phone {
                     width: 70%;
                     margin-top: 75px;
                 }
 
                 h2 {
-                    // text-align: center;
                     font-family: 'yesevaOne';
                     font-size: 21px;
                     color: white;
@@ -779,7 +1027,15 @@ body {
                     font-size: 16px;
                     color: white;
                 }
+
                 div.logos {
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                        padding-top: 40px;
+                        padding-right: 10px;
+                        fill: white;
+                    }
                     a {
                         svg {
                             width: 25px;
@@ -787,27 +1043,35 @@ body {
                             padding-top: 40px;
                             padding-right: 10px;
                             fill: white;
+
+                            &:hover {
+                                fill: #cc9900;
+                            }
                         }
                     }
                 }
-            }
-            // la première div est plus large que les 2 autres
-            div.vertical-flex:first-child {
-                width: 30%;
-                @media screen and (min-width: 576px) and (max-width: 767px) {
-                    width: 70%;
-                    margin-top: 0;                }
-    
-                @media screen and (max-width: 575px) {
-                    width: 70%;
-                    margin-top: 0;
-                }
-            }
 
-            div.vertical-flex:last-child {
-                p {
-                    span {
-                        display: block;
+                &:first-child {
+                    width: 30%;
+
+                    @include landscapephone {
+                        width: 70%;
+                        margin-top: 0;
+                    }
+
+                    @include phone {
+                        width: 70%;
+                        margin-top: 0;
+                    }
+                }
+
+                &:last-child {
+                    
+                    p {
+
+                        span {
+                            display: block;
+                        }
                     }
                 }
             }
